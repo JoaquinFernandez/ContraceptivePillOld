@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/initial_dialog"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="false"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/select_dialog_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/Gray"
+        android:clickable="false"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/Black" />
+
+    <ListView
+        android:id="@+id/initial_dialog_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:choiceMode="singleChoice"
+        android:orientation="vertical"
+        android:paddingTop="10dp" />
+
+    <Button
+        android:id="@+id/initial_dialog_button"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:clickable="true"
+        android:text="@string/button_ok" />
+
+</LinearLayout>

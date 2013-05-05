@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/info_dialog" android:orientation="vertical"
+	android:layout_width="match_parent" android:layout_height="match_parent"
+	android:clickable="false">
+
+	<TextView android:id="@+id/info_dialog_text" android:padding="10dp"
+		android:layout_width="match_parent" android:layout_height="wrap_content"
+		android:clickable="false" android:gravity="left"  android:scrollbars = "vertical"
+	    android:layout_alignParentTop="true" android:layout_above="@+id/info_dialog_button"
+		android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+	<Button android:id="@+id/info_dialog_button" android:padding="10dp" 
+	    android:layout_alignParentBottom="true"
+		android:layout_width="match_parent" android:layout_height="wrap_content"
+		android:layout_gravity="center" android:clickable="true"
+		 android:text="@string/button_ok" />
+</RelativeLayout>

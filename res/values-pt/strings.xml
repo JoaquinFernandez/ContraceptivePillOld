@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">Pílula  </string>
+      <string name="app_version">Version</string>
+    <string name="email">pill@jfma.es \n</string>
+    <string name="company_name">JFMA ™</string>
+    <string name="help_traducing"> Help us translate the application to your language. Write us!</string>
+  <string name="title_pill_select">Escolha o tipo de pílula</string>
+  <string-array name="pill_types">
+    <item>21 pílulas</item>
+    <item>22 pílulas</item>
+    <item>24 pílulas</item>
+    <item>28 pílulas (21 + 7)</item>
+    <item>28 pílulas (24 + 4)</item>
+  </string-array>
+  <string-array name="weekdays_short">
+    <item>Seg</item>
+    <item>Ter</item>
+    <item>Qua</item>
+    <item>Qui</item>
+    <item>Sex</item>
+    <item>Sab</item>
+    <item>Dom</item>
+  </string-array>
+  <string-array name="months">
+    <item>Janeiro</item>
+    <item>Fevereiro</item>
+    <item>Março</item>
+    <item>Abril</item>
+    <item>Maio</item>
+    <item>Junho</item>
+    <item>Julho</item>
+    <item>Agosto</item>
+    <item>Setembro</item>
+    <item>Outubro</item>
+    <item>Novembro</item>
+    <item>Dezembro</item>
+  </string-array>
+  <string-array name="theme_names">
+    <item>Rosa</item>
+    <item>Verde</item>
+    <item>Azul</item>
+  </string-array>
+  <string-array name="preferences_categories">
+    <item>Tipo de Pílula Anticoncepcional</item>
+    <item>Dia do Início da Semana</item>
+    <item>Tipos de Calendário</item>
+    <item>Alarme Diário</item>
+    <item>Hora</item>
+    <item>Som</item>
+    <item>Vibração</item>
+    <item>Alarme de compra</item>
+    <item>Dias antes</item>
+    <item>Hora</item>
+    <item>Som</item>
+    <item>Vibração</item>
+  </string-array>
+  <string-array name="start_week_day">
+    <item>Segunda-feira</item>
+    <item>Domingo</item>
+  </string-array>
+  <string-array name="yes_no_array">
+    <item>Não</item>
+    <item>Sim</item>
+  </string-array>
+  <string-array name="prev_alarm_array">
+    <item>0</item>
+    <item>1</item>
+    <item>2</item>
+    <item>3</item>
+    <item>4</item>
+  </string-array>
+  <string name="select_theme_dialog_title">¡Escolha os seus Cores!</string>
+  <string name="select_startday_dialog_title">Início da semana</string>
+  <string name="select_pill_type_dialog_title">Escolha o tipo de pílula</string>
+  <string name="select_diaryalarm_dialog_title">Você quero alertá-lo que você tem que tomar a pílula?</string>
+  <string name="select_cyclealarm_dialog_title">Você quero alertá-lo que você tem que comprar a pílula?</string>
+  <string name="select_prevdays_dialog_title">Quantos dias antes de iniciar a caixa?</string>
+  <string name="select_alarm_hour_dialog_title">Introduzir la hora</string>
+  <string name="select_sound_dialog_title">Som</string>
+  <string name="select_vibrate_dialog_title">Vibração</string>
+  <string name="preferences_calendar_separator">Calendário</string>
+  <string name="preferences_alarms_separator">Alarmes</string>
+  <string name="pill_name">Pílula</string>
+  <string name="button_ok">Aceitar</string>
+  <string name="button_no">Cancelar</string>
+  <string name="menu_about">About</string>
+  <string name="menu_exit">Exit</string>
+  <string name="menu_info">Info</string>
+  <string name="pill_type_not_selected">Você tem que escolher um tipo de pílula</string>
+  <string name="alarm_info_toast">Na outra pestanha podes configurar as tuas alarmas</string>
+  <string name="notification_bar_diary_text">¡Toma la pílula!</string>
+  <string name="notification_bar_cycle_text1">Começa a nova caixa dentro de </string>
+  <string name="notification_bar_cycle_text2"> días!</string>
+  <string name="notification_bar_cycle_text3">¡Hoje começas a nova caixa!</string>
+  <string name="notification_bar_cycle_text4">¡Amanhã começas a nova caixa!</string>
+  <string name="day_touched_text">Tem certeza de que deseja alterar o dia de início da presente caixa?</string>
+  <string name="set_taking_pillday_toast">Clique acima do dia de inicio da primeira caixa</string>
+  <string name="appwidget_label">Clique acima do dia de inicio da primeira caixa</string>
+  <string name="rest_name">Descanso</string>
+  <string name="button_calificate">Voto!</string>
+  <string name="button_gallery_plain">Fundo liso</string>
+  <string name="button_gallery_bricked">Fundo quadrado</string>
+  <string name="instructions"> \n Primeiro de tudo você tem que selecionar o tipo de pílula.
+    Sim você desea alterar o tipo de pílula que você usa, você pode fazê-lo sempre
+    na pestanha de preferências (Na pestanha Pricipal selecionar a outra pestanha)
+    \n \n Depois disso, você tem que selecionar o dia que
+    tomou a primeira pílula da sua última caixa (a presente), clicando no dia do
+    Calendário (Você pode mudar o mês clicando nas setas de acima) \ n \ n Por fim
+    você pode definir suas opções como alarme diário,alarme de compra o tipo de calendário
+    que você quer.
+  </string>
+</resources>

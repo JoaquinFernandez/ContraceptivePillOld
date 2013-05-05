@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Pigułka Antykoncepcyjna</string>
+    <string name="app_version">Wersja</string>
+    <string name="email">pill@jfma.es \n</string>
+    <string name="company_name">JFMA ™</string>
+    <string name="help_traducing"> Pomóż nam przetłumaczyć tą aplikację na twój język. Napisz do nas!</string>
+    <string name="title_pill_select">Wybierz rodzaj pigułki</string>
+
+    <string-array name="pill_types">
+        <item>21 pigułek</item>
+        <item>22 pigułki</item>
+        <item>24 pigułki</item>
+        <item>28 pigułek (21 + 7)</item>
+        <item>28 pigułek (24 + 4)</item>
+    </string-array>
+    <string-array name="weekdays_short">
+        <item>Pon</item>
+        <item>Wt</item>
+        <item>Śr</item>
+        <item>Czw</item>
+        <item>Pt</item>
+        <item>Sob</item>
+        <item>Ndz</item>
+    </string-array>
+    <string-array name="months">
+        <item>Styczeń</item>
+        <item>Luty</item>
+        <item>Marzec</item>
+        <item>Kwiecień</item>
+        <item>Maj</item>
+        <item>Czerwiec</item>
+        <item>Lipiec</item>
+        <item>Sierpień</item>
+        <item>Wrzesień</item>
+        <item>Październik</item>
+        <item>Listopad</item>
+        <item>Grudzień</item>
+    </string-array>
+    <string-array name="theme_names">
+        <item>Różowy</item>
+        <item>Zielony</item>
+        <item>Niebieski</item>
+    </string-array>
+    <string-array name="preferences_categories">
+        <item>Typ pigułek antykoncepcyjnych</item>
+        <item>Pierwszy dzień tygodnia</item>
+        <item>Motyw kalendarza</item>
+        <item>Przypomnienie dzienne</item>
+        <item>Ustaw godzinę</item>
+        <item>Dźwięki</item>
+        <item>Wibracje</item>
+        <item>Przypomnienie kupna</item>
+        <item>Poprzednie dni</item>
+        <item>Ustaw godzinę</item>
+        <item>Dźwięk</item>
+        <item>Wibracje</item>
+    </string-array>
+    <string-array name="start_week_day">
+        <item>Poniedziałek</item>
+        <item>Niedziela</item>
+    </string-array>
+    <string-array name="yes_no_array">
+        <item>Nie</item>
+        <item>Tak</item>
+    </string-array>
+    <string-array name="prev_alarm_array">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string name="select_theme_dialog_title">Wybierz motyw kolorystyczny</string>
+    <string name="select_startday_dialog_title">Pierwszy dzień tygodnia</string>
+    <string name="select_pill_type_dialog_title">Wybierz rodzaj pigułek</string>
+    <string name="select_diaryalarm_dialog_title">Czy chcesz włączyć alarm dzienny?</string>
+    <string name="select_cyclealarm_dialog_title">Czy chcesz włączyć przypomnienie o początku cyklu pigułek?</string>
+    <string name="select_prevdays_dialog_title">Ile dni przed początkiem nowej paczki mam ci przypomnieć?</string>
+    <string name="select_alarm_hour_dialog_title">Ustaw godzinę</string>
+    <string name="select_sound_dialog_title">Dźwięk</string>
+    <string name="select_vibrate_dialog_title">Wibracje</string>
+    <string name="preferences_calendar_separator">Kalendarz</string>
+    <string name="preferences_alarms_separator">Przypomnienia</string>
+    <string name="pill_name">Pigułka</string>
+    <string name="button_ok">OK</string>
+    <string name="button_no">Anuluj</string>
+    <string name="menu_about">O programie</string>
+    <string name="menu_exit">Wyjście</string>
+	<string name="menu_info">Info</string>
+    <string name="pill_type_not_selected">Musisz wybrać typ pigułek</string>
+    <string name="alarm_info_toast">Możesz włączyć przypomnienia w innej zakładce</string>
+    <string name="notification_bar_diary_text">Weź pigułkę!</string>
+    <string name="notification_bar_cycle_text1">Twój cykl pigułek zaczyna się za</string>
+    <string name="notification_bar_cycle_text2"> dni!</string>
+    <string name="notification_bar_cycle_text3">Twój cykl pigułek zaczyna się dzisiaj!</string>
+    <string name="notification_bar_cycle_text4">Twój cykl pigułek zaczyna się jutro!</string>
+    <string name="day_touched_text">Czy na pewno chcesz zmienić dzień początkowy cyklu przyjmowania tabletek?</string>
+    <string name="set_taking_pillday_toast">Wybierz dzień, w którym zaczęłaś ostatnie opakowanie tabletek</string>
+    <string name="appwidget_label">Wybierz dzień, w którym zaczęłaś ostatnie opakowanie tabletek</string>
+    <string name="rest_name">Wyłącz</string>
+    <string name="button_calificate">Oceń!</string>
+    <string name="button_gallery_plain">Gładkie tło</string>
+    <string name="button_gallery_bricked">Bricked Background</string>
+    <string name="instructions"> \n W pierwszej kolejności musisz wybrać typ tabletek. 
+		Jeśli zechcesz, zawsze możesz zmienić typ stosowaneych tabletek w ekranie Opcji 
+		(wybierz drugą zakładkę u góry ekranu). \n \n Później musisz wybrać dzień, w 
+		którym rozpoczęłaś ostatnie opakowanie tabletek wybierając datę w kalendarzu 
+		(możesz zmienić miesiąc klikając strzałkę w lewo lub w prawo) \n \n Na koniec 
+		możesz ustawć takie opcje jak przypomnienia czy motyw kalendarza w ekranie opcji</string>
+
+</resources>

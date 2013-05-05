@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">Píldora </string>
+      <string name="app_version">Version</string>
+    <string name="email">pill@jfma.es \n</string>
+    <string name="company_name">JFMA ™</string>
+    <string name="help_traducing"> Help us translate the application to your language. Write us!</string>
+  <string name="title_pill_select">Elige tu tipo de píldora</string>
+  <string-array name="pill_types">
+    <item>21 píldoras</item>
+    <item>22 píldoras</item>
+    <item>24 píldoras</item>
+    <item>28 píldoras (21 + 7)</item>
+    <item>28 píldoras (24 + 4)</item>
+  </string-array>
+  <string-array name="weekdays_short">
+    <item>Lun</item>
+    <item>Mar</item>
+    <item>Mie</item>
+    <item>Jue</item>
+    <item>Vie</item>
+    <item>Sab</item>
+    <item>Dom</item>
+  </string-array>
+  <string-array name="months">
+    <item>Enero</item>
+    <item>Febrero</item>
+    <item>Marzo</item>
+    <item>Abril</item>
+    <item>Mayo</item>
+    <item>Junio</item>
+    <item>Julio</item>
+    <item>Agosto</item>
+    <item>Septiembre</item>
+    <item>Octubre</item>
+    <item>Noviembre</item>
+    <item>Diciembre</item>
+  </string-array>
+  <string-array name="theme_names">
+    <item>Rosa</item>
+    <item>Verde</item>
+    <item>Azul</item>
+  </string-array>
+  <string-array name="preferences_categories">
+    <item>Tipo de Píldora Anticonceptiva</item>
+    <item>Dia de comienzo de la semana</item>
+    <item>Tipos de Calendario</item>
+    <item>Alarma diaria</item>
+    <item>Introduzca hora</item>
+    <item>Sonido</item>
+    <item>Vibración</item>
+    <item>Alarma de compra</item>
+    <item>Dias antes</item>
+    <item>Introduzca hora</item>
+    <item>Sonido</item>
+    <item>Vibración</item>
+  </string-array>
+  <string-array name="start_week_day">
+    <item>Lunes</item>
+    <item>Domingo</item>
+  </string-array>
+  <string-array name="yes_no_array">
+    <item>No</item>
+    <item>Si</item>
+  </string-array>
+  <string-array name="prev_alarm_array">
+    <item>0</item>
+    <item>1</item>
+    <item>2</item>
+    <item>3</item>
+    <item>4</item>
+  </string-array>
+  <string name="select_theme_dialog_title">¡Elige tus colores!</string>
+  <string name="select_startday_dialog_title">Dia de comienzo de la semana</string>
+  <string name="select_pill_type_dialog_title">Elige tu tipo de pildora</string>
+  <string name="select_diaryalarm_dialog_title">¿Quieres que te avise de que tienes que tomarte la pildora?</string>
+  <string name="select_cyclealarm_dialog_title">¿Quieres que te avise de que tienes que comprar la siguiente caja?</string>
+  <string name="select_prevdays_dialog_title">¿Cuántos días antes de que empieces la nueva caja quieres que te avise?</string>
+  <string name="select_alarm_hour_dialog_title">Introduzca la hora</string>
+  <string name="select_sound_dialog_title">Sonido</string>
+  <string name="select_vibrate_dialog_title">Vibración</string>
+  <string name="preferences_calendar_separator">Calendario</string>
+  <string name="preferences_alarms_separator">Alarmas</string>
+  <string name="pill_name">Pildora</string>
+  <string name="button_ok">OK</string>
+  <string name="button_no">Cancel</string>
+  <string name="menu_about">About</string>
+  <string name="menu_exit">Exit</string>
+  <string name="menu_info">Info</string>
+  <string name="pill_type_not_selected">Tienes que elegir un tipo de pildora</string>
+  <string name="alarm_info_toast">Puedes configurar tus alarmas en la otra pestaña</string>
+  <string name="notification_bar_diary_text">¡Tomate la pildora!</string>
+  <string name="notification_bar_cycle_text1">Dentro de </string>
+  <string name="notification_bar_cycle_text2"> días comienzas la nueva caja!</string>
+  <string name="notification_bar_cycle_text3">¡Hoy comienzas la caja!</string>
+  <string name="notification_bar_cycle_text4">¡Mañana empiezas la nueva caja!</string>
+  <string name="day_touched_text">¿Estas segura de que deseas cambiar el dia que tomaste la primera píldora de la ultima caja?</string>
+  <string name="set_taking_pillday_toast">Pincha en el día en el que tomaste la primera pildora de la ultima caja</string>
+  <string name="appwidget_label">Pincha en el día en el que tomaste la primera pildora de la ultima caja</string>
+  <string name="rest_name">Descanso</string>
+  <string name="button_calificate">¡Vótanos!</string>
+  <string name="button_gallery_plain">Fondo liso</string>
+  <string name="button_gallery_bricked">Fondo cuadriculado</string>
+  <string name="instructions">
+    \n Lo primero de todo tienes que seleccionar tu tipo de pildora.
+    Si quieres cambiar el tipo de píldora que usas, puedes hacerlo siempre que
+    quieras en la pestaña de preferencias( En la ventana pricipal selecciona
+    la otra pestaña)\n \n Despues de esto, tienes que seleccionar el día en que
+    tomaste la primera píldora de tu última caja(la actual) pinchando sobre el día en el
+    calendario( Puedes cambiar de mes pinchando en las flechas superiores)\n \n Finalmente
+    puedes configurar tus opciones como alarma diaria, alarma de compra o el tipo de calendario
+    que deseas
+  </string>
+</resources>

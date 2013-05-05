@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">Pillola  </string>
+      <string name="app_version">Version</string>
+    <string name="email">pill@jfma.es \n</string>
+    <string name="company_name">JFMA ™</string>
+    <string name="help_traducing"> Help us translate the application to your language. Write us!</string>
+  <string name="title_pill_select">Scegli la tua tipi di pillola contraccettiva</string>
+  <string-array name="pill_types">
+    <item>21 pillole</item>
+    <item>22 pillole</item>
+    <item>24 pillole</item>
+    <item>28 pillole (21 + 7)</item>
+    <item>28 pillole (24 + 4)</item>
+  </string-array>
+  <string-array name="weekdays_short">
+    <item>Lun</item>
+    <item>Mar</item>
+    <item>Mer</item>
+    <item>Gio</item>
+    <item>Ven</item>
+    <item>Sab</item>
+    <item>Dom</item>
+  </string-array>
+  <string-array name="months">
+    <item>Gennaio</item>
+    <item>Febbraio</item>
+    <item>Marzo</item>
+    <item>Aprile</item>
+    <item>Maggio</item>
+    <item>Giugno</item>
+    <item>Luglio</item>
+    <item>Agosto</item>
+    <item>Settembre</item>
+    <item>Ottobre</item>
+    <item>Novembre</item>
+    <item>Dicembre</item>
+  </string-array>
+  <string-array name="theme_names">
+    <item>Rosso</item>
+    <item>Verde</item>
+    <item>Azzurro</item>
+  </string-array>
+  <string-array name="preferences_categories">
+    <item>Tipi di pillola contraccettiva</item>
+    <item>Inizio della settimana</item>
+    <item>Tipi di calendario</item>
+    <item>Allarme giornaliero</item>
+    <item>Ore</item>
+    <item>Suono</item>
+    <item>Vibrazione</item>
+    <item>Alarma de achãquisto</item>
+    <item>Giorni prima</item>
+    <item>Introduzca hora</item>
+    <item>Suono</item>
+    <item>Vibrazione</item>
+  </string-array>
+  <string-array name="start_week_day">
+    <item>Lunedì</item>
+    <item>Domenica</item>
+  </string-array>
+  <string-array name="yes_no_array">
+    <item>No</item>
+    <item>Si</item>
+  </string-array>
+  <string-array name="prev_alarm_array">
+    <item>0</item>
+    <item>1</item>
+    <item>2</item>
+    <item>3</item>
+    <item>4</item>
+  </string-array>
+  <string name="select_theme_dialog_title">Scegliere il tuo colori!</string>
+  <string name="select_startday_dialog_title">Giorno di inizio di la settimana</string>
+  <string name="select_pill_type_dialog_title">Scegliere il tipo di pillola contraccettiva</string>
+  <string name="select_diaryalarm_dialog_title">Annuncio ogni giorno di prendere la pillola?</string>
+  <string name="select_cyclealarm_dialog_title">Annuncio per acquistare?</string>
+  <string name="select_prevdays_dialog_title">Giorni prima di prendere la prima pillola?</string>
+  <string name="select_alarm_hour_dialog_title">Selezionare ore</string>
+  <string name="select_sound_dialog_title">Souno</string>
+  <string name="select_vibrate_dialog_title">Vibrazione</string>
+  <string name="preferences_calendar_separator">Calendario</string>
+  <string name="preferences_alarms_separator">Allarmi</string>
+  <string name="pill_name">Pillola</string>
+  <string name="button_ok">OK</string>
+  <string name="button_no">Cancel</string>
+  <string name="menu_about">About</string>
+  <string name="menu_exit">Exit</string>
+  <string name="menu_info">Info</string>
+  <string name="pill_type_not_selected">Devi scegliere il tipo di pillola</string>
+  <string name="alarm_info_toast">In altra finestra è possibile configurare allarmi</string>
+  <string name="notification_bar_diary_text">Prendi la pillola!</string>
+  <string name="notification_bar_cycle_text1">In  </string>
+  <string name="notification_bar_cycle_text2"> Giorno inizia la casella!</string>
+  <string name="notification_bar_cycle_text3">Oggi inizia la casella!</string>
+  <string name="notification_bar_cycle_text4">Mattina inizia la casella!</string>
+  <string name="day_touched_text">Sei sicuro di voler modificare l\'inizio de la casella?</string>
+  <string name="set_taking_pillday_toast">Cliccare in il giorno di inizio de la casella</string>
+  <string name="appwidget_label">Cliccare in il giorno di inizio de la casella</string>
+  <string name="rest_name">Descanso</string>
+  <string name="button_calificate">Voto!</string>
+  <string name="button_gallery_plain">Fondo liscio</string>
+  <string name="button_gallery_bricked">Fondo rugoso</string>
+  <string name="instructions"> \n
+    1º) Selezionare il tipo di pillola. È possibile modificare in qualsiasi momento nella scheda delle preferenze.\n \n
+    2º) Selezionare il giorno hai preso la prima pillola del caso finale \n \n
+    3º) Impostare l\'allarme nella scheda delle preferenze
+  </string>
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/MnuOpt1"
+        android:icon="@drawable/ic_menu_about"
+        android:title="@string/menu_about"
+        android:showAsAction="ifRoom|withText">
+    </item>
+    <item
+        android:id="@+id/MnuOpt2"
+        android:icon="@drawable/ic_menu_info"
+        android:title="@string/menu_info"
+        android:showAsAction="ifRoom|withText">
+    </item>
+    <item
+        android:id="@+id/MnuOpt3"
+        android:icon="@drawable/ic_menu_exit"
+        android:title="@string/menu_exit"
+        android:showAsAction="ifRoom|withText">
+    </item>
+
+</menu>

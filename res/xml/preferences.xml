@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="@string/preferences_calendar_separator" >
+        <ListPreference
+            android:entries="@array/pill_types"
+            android:entryValues="@array/pill_types_values"
+            android:key="pill_type"
+            android:persistent="true"
+            android:title="@string/title_pill_select" />
+         <com.jsolutionssp.pill.preference.DatePickerPreference
+            android:key="start_pack_date"
+            android:persistent="true"
+            android:title="@string/start_pack_date_preferences" />
+        <ListPreference
+            android:key="start_week_day"
+            android:entries="@array/start_week_day"
+            android:entryValues="@array/start_week_day"
+            android:persistent="true"
+            android:title="@string/select_startday_dialog_title" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/preferences_alarms_separator" >
+        <!--  Diary alarm -->
+        <CheckBoxPreference
+            android:key="diary_alarm"
+            android:persistent="true"
+            android:title="@string/diary_alarm_preferences" />
+        <com.jsolutionssp.pill.preference.TimePickerPreference
+            android:dependency="diary_alarm"
+            android:key="diary_alarm_set_time"
+            android:persistent="true"
+            android:title="@string/set_time_preferences" />
+        <RingtonePreference
+            android:dependency="diary_alarm"
+            android:key="diary_alarm_ringtone"
+            android:showDefault="true"
+            android:persistent="true"
+            android:title="@string/ringtone_preferences" />
+        <CheckBoxPreference
+            android:dependency="diary_alarm"
+            android:key="diary_alarm_vibrate"
+            android:persistent="true"
+            android:title="@string/vibration_preferences" />
+        <!--  Cycle alarm -->
+        <CheckBoxPreference
+            android:key="cycle_alarm"
+            android:persistent="true"
+            android:title="@string/buy_alarm_preferences" />
+        <com.jsolutionssp.pill.preference.TimePickerPreference
+            android:dependency="cycle_alarm"
+            android:key="cycle_alarm_set_time"
+            android:persistent="true"
+            android:title="@string/set_time_preferences" />
+        <com.jsolutionssp.pill.preference.NumberPickerPreference
+            android:key="cycle_alarm_prev_days"
+            android:dependency="cycle_alarm"
+            android:persistent="true"
+            android:title="@string/previous_days_preferences" />
+        <RingtonePreference
+            android:dependency="cycle_alarm"
+            android:key="cycle_alarm_ringtone"
+            android:showDefault="true"
+            android:persistent="true"
+            android:title="@string/ringtone_preferences" />
+        <CheckBoxPreference
+            android:dependency="cycle_alarm"
+            android:key="cycle_alarm_vibrate"
+            android:persistent="true"
+            android:title="@string/vibration_preferences" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

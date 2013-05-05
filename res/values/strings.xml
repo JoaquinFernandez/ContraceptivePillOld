@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Contraceptive Pill</string>
+    <string name="preferences_activity_title">Contraceptive Pill</string>
+    <string name="app_version">Version</string>
+    <string name="email">pill@jfma.es \n</string>
+    <string name="company_name">JFMA ™</string>
+    <string name="help_traducing"> Help us translate the application to your language. Write us!</string>
+    <string name="title_pill_select">Choose pill type</string>
+
+    <string-array name="pill_types">
+        <item>21 pills + 7 rest days</item>
+        <item>22 pills + 6 rest days</item>
+        <item>24 pills + 4 rest days</item>
+        <item>21 active pills + 7 placebo</item>
+        <item>24 active pills + 4 placebo</item>
+        <item>28 pills + 7 rest days</item>
+    </string-array>
+    <!-- Format is NumberTakingDays/NumberPlaceboDays/NumberOfRestDays -->
+    <string-array name="pill_types_values">
+        <item>21/0/7</item>
+        <item>22/0/6</item>
+        <item>24/0/4</item>
+        <item>21/7/0</item>
+        <item>24/4/0</item>
+        <item>28/0/7</item>
+    </string-array>
+    <string-array name="weekdays_short">
+        <item>Mon</item>
+        <item>Tue</item>
+        <item>Wed</item>
+        <item>Thu</item>
+        <item>Fri</item>
+        <item>Sat</item>
+        <item>Sun</item>
+    </string-array>
+    <string-array name="months">
+        <item>JANUARY</item>
+        <item>FEBRUARY</item>
+        <item>MARCH</item>
+        <item>APRIL</item>
+        <item>MAY</item>
+        <item>JUNE</item>
+        <item>JULY</item>
+        <item>AUGUST</item>
+        <item>SEPTEMBER</item>
+        <item>OCTOBER</item>
+        <item>NOVEMBER</item>
+        <item>DECEMBER</item>
+    </string-array>
+    <string-array name="theme_names">
+        <item>Pink</item>
+        <item>Green</item>
+        <item>Blue</item>
+    </string-array>
+    <string-array name="preferences_categories">
+        <item>Contraceptive Pill Type</item>
+        <item>Week Start Day</item>
+        <item>Calendar Theme</item>
+        <item>Diary Alarm</item>
+        <item>Set Time</item>
+        <item>Sound</item>
+        <item>Vibration</item>
+        <item>Buy Alarm</item>
+        <item>Previous Days</item>
+        <item>Set Time</item>
+        <item>Sound</item>
+        <item>Vibration</item>
+    </string-array>
+    <string-array name="start_week_day">
+        <item>Monday</item>
+        <item>Sunday</item>
+    </string-array>
+    <string-array name="yes_no_array">
+        <item>No</item>
+        <item>Yes</item>
+    </string-array>
+    <string-array name="prev_alarm_array">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string name="pill_taken">Pill already taken</string>
+    <string name="pill_not_taken">Pill forgotten</string>
+    <string name="pill_taken_late">Pill took out of time</string>
+    <string name="pill_pending">Pill still to take</string>
+    <string name="pill_placebo">Placebo pill to take</string>
+    <string name="pill_rest_day">Rest Day</string>
+    <string name="calendar_tab_name">Calendar</string>
+    <string name="preferences_tab_name">Preferences</string>
+    <string name="select_startday_dialog_title">Week start day</string>
+    <string name="select_pill_type_dialog_title">Choose pill type</string>
+    <string name="select_diaryalarm_dialog_title">Do you want daily pill reminder?</string>
+    <string name="select_cyclealarm_dialog_title">Do you want pill cycle starting reminder?</string>
+    <string name="select_prevdays_dialog_title">How many days before starting the pack do you want me to remind you?</string>
+    <string name="select_alarm_hour_dialog_title">Set Time</string>
+    <string name="select_sound_dialog_title">Sound</string>
+    <string name="select_vibrate_dialog_title">Vibrate</string>
+    <string name="preferences_calendar_separator">Calendar</string>
+    <string name="preferences_alarms_separator">Alarms</string>
+    <string name="pill_name">Pill</string>
+    <string name="button_ok">OK</string>
+    <string name="button_no">Cancel</string>
+    <string name="button_save">Save</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="button_clear">Clear</string>
+    <string name="button_change">Change</string>
+    <string name="menu_about">About</string>
+    <string name="menu_exit">Exit</string>
+    <string name="menu_info">Info</string>
+     <string name="day_touched_note_title">Take your notes</string>
+    <string name="pill_type_not_selected">You have to choose a pill type</string>
+    <string name="alarm_info_toast">You can set alarms in the other tab</string>
+    <string name="notification_bar_diary_text">¡Take the pill!</string>
+    <string name="notification_bar_cycle_text1">Your pill cycle begins in</string>
+    <string name="notification_bar_cycle_text2"> days!</string>
+    <string name="notification_bar_cycle_text3">Your pill cycle starts today!</string>
+    <string name="notification_bar_cycle_text4">Your pill cycle starts tomorrow!</string>
+    <string name="day_touched_text">Are you sure you want to change the pill taking cycle starting day?</string>
+    <string name="set_taking_pillday_toast">Click on the day you started the last pill pack</string>
+    <string name="appwidget_label">Click on the day you started the last pill pack</string>
+    <string name="rest_name">Rest</string>
+    <string name="button_calificate">Rate!</string>
+    <string name="button_gallery_plain">Plain Background</string>
+    <string name="button_gallery_bricked">Bricked Background</string>
+    <string name="instructions"> \n First of all you must select your type of pill, if you 
+	    want to change what type of pill do you use, you can always change it in the 
+	    preferences screen (in the upper side select the other tab) \n \n After that you 
+	    must select the day you started the last pill pack by clicking on the day in 
+	    the calendar (you can change the month by selecting the arrows to the left 
+	    or right) \n \n Finally you can set your options, as the reminder alarms or themes 
+	    for the calendar in the preferences screen</string>
+    <string name="contraceptive_pill_type_preferences"><item>Contraceptive Pill Type</item></string>
+    <string name="week_start_day_preferences">Week Start Day</string>
+    <string name="calendar_theme_preferences">Calendar Theme</string>
+    <string name="start_pack_date_preferences">Pack start Date</string>
+    <string name="diary_alarm_preferences">Diary Alarm</string>
+    <string name="buy_alarm_preferences">Buy Alarm</string>
+    <string name="previous_days_preferences">Previous Days</string>
+    <string name="set_time_preferences">Set Time</string>
+    <string name="sound_preferences">Sound</string>
+    <string name="vibration_preferences">Vibrate</string>
+    <string name="ringtone_preferences">Ringtone</string>
+
+</resources>
