@@ -27,8 +27,7 @@
             android:layout_gravity="center_vertical|center_horizontal"
             android:layout_weight=".6"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="#FFFFFF" 
-            android:background="@android:color/transparent" >
+            android:textColor="#FFFFFF" >
         </Button>
 
         <ImageView

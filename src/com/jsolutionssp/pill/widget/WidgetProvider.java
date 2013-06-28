@@ -23,7 +23,7 @@ public class WidgetProvider extends AppWidgetProvider {
 	@Override
 	public void onUpdate(Context context, AppWidgetManager appWidgetManager,
 			int[] appWidgetIds) {
-		/*GregorianCalendar date = new GregorianCalendar();
+		GregorianCalendar date = new GregorianCalendar();
 		SharedPreferences settings = context.getSharedPreferences(ContraceptivePill.PREFS_NAME, 0);
 		//Update widget info
 		boolean isPillDay = PillLogics.isPillDay(settings, 
@@ -31,14 +31,14 @@ public class WidgetProvider extends AppWidgetProvider {
 		String daysLeft = PillLogics.DaysLeft(settings);
 
 		try {
-			updateWidgetContent(context, appWidgetManager, isPillDay);
+			updateWidgetContent(context, appWidgetManager, isPillDay, daysLeft);
 		} catch (Exception e) {
-		}*/
+		}
 	}
 
 	public static void updateWidgetContent(Context context,
-			AppWidgetManager appWidgetManager, int pillType) {
-		/*
+			AppWidgetManager appWidgetManager, boolean isPillDay, String daysLeft) {
+
 		RemoteViews remoteView = new RemoteViews(context.getPackageName(),
 				R.layout.appwidget_layout);
 
@@ -46,7 +46,7 @@ public class WidgetProvider extends AppWidgetProvider {
 		PendingIntent launchAppPendingIntent = PendingIntent.getActivity(context,
 				0, launchAppIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 		remoteView.setOnClickPendingIntent(R.id.full_widget, launchAppPendingIntent);
-		if (pillType) {
+		if (isPillDay) {
 			remoteView.setImageViewResource(R.id.logo_widget, R.drawable.pill_icon);
 			remoteView.setTextViewText(R.id.text_widget, context.getResources().getString(R.string.pill_name));
 		}
@@ -54,8 +54,9 @@ public class WidgetProvider extends AppWidgetProvider {
 			remoteView.setImageViewResource(R.id.logo_widget, R.drawable.pill_rest_day);
 			remoteView.setTextViewText(R.id.text_widget, context.getResources().getString(R.string.rest_name));
 		}
+		remoteView.setTextViewText(R.id.days_left_widget, daysLeft);
 		ComponentName listWidget = new ComponentName(context,
 				WidgetProvider.class);
-		appWidgetManager.updateAppWidget(listWidget, remoteView);*/
+		appWidgetManager.updateAppWidget(listWidget, remoteView);
 	}
 }

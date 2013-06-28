@@ -10,12 +10,12 @@ import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceCategory;
+
 import com.actionbarsherlock.app.SherlockPreferenceActivity;
 import com.actionbarsherlock.view.MenuItem;
 import com.jsolutionssp.pill.ContraceptivePill;
 import com.jsolutionssp.pill.R;
 import com.jsolutionssp.pill.db.DayStorageDB;
-import com.jsolutionssp.pill.service.SetAlarms;
 
 /**
  * 
@@ -80,12 +80,11 @@ public class PreferencesActivityV7 extends SherlockPreferenceActivity implements
 			DayStorageDB db = new DayStorageDB(this);
 			db.invalidateDatabase();
 		}
-		//Just need to check if cycle_alarm or diary_alarm strings are in the key of the preference changed
-		//because any preference relative to the same alarm start with the same prefix
-		if (key.indexOf("cycle_alarm") != -1 || key.indexOf("diary_alarm") != -1) {
-			Intent i = new Intent(this, SetAlarms.class);
-			i.setAction("com.jsolutionssp.pill.updateAlarm");
-			sendBroadcast(i);
+		if (key.indexOf("cycle_alarm") != -1) {
+			
+		}
+		if (key.indexOf("diary_alarm") != -1) {
+			
 		}
 	}
 
