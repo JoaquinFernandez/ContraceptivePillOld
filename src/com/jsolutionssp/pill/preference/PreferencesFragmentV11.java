@@ -3,6 +3,8 @@ package com.jsolutionssp.pill.preference;
 import java.text.DateFormat;
 import java.util.Date;
 
+import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.os.Bundle;
@@ -13,6 +15,7 @@ import android.preference.PreferenceFragment;
 
 import com.jsolutionssp.pill.R;
 import com.jsolutionssp.pill.db.DayStorageDB;
+import com.jsolutionssp.pill.service.SetAlarms;
 
 public class PreferencesFragmentV11 extends PreferenceFragment implements OnSharedPreferenceChangeListener {
 
@@ -57,11 +60,11 @@ public class PreferencesFragmentV11 extends PreferenceFragment implements OnShar
 			DayStorageDB db = new DayStorageDB(this.getActivity());
 			db.invalidateDatabase();
 		}
-		if (key.indexOf("cycle_alarm") != -1) {
-			
-		}
-		if (key.indexOf("diary_alarm") != -1) {
-			
+		if (key.indexOf("cycle_alarm") != -1 || key.indexOf("diary_alarm") != -1) {
+			Context context = getActivity().getApplicationContext();
+			Intent i = new Intent(context, SetAlarms.class);
+			i.setAction("com.jsolutionssp.pill.updateAlarm");
+			context.sendBroadcast(i);
 		}
 	}
 
