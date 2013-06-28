@@ -33,6 +33,13 @@ public class PillDayInfo {
 		settings = PreferenceManager.getDefaultSharedPreferences(context);
 	}
 
+	/**
+	 * Public method that given a calendar with the day we want to know about and 
+	 * @param cellCalendar
+	 * @param dayOfYear
+	 * @param year
+	 * @return
+	 */
 	public int getPillType(GregorianCalendar cellCalendar, int dayOfYear, int year) {
 		DayStorageDB db = new DayStorageDB(context);
 		String pillType = db.getPillType(String.valueOf(year), String.valueOf(dayOfYear));
@@ -61,11 +68,17 @@ public class PillDayInfo {
 		return finalPillType;
 	}
 
+	/**
+	 * This method checks that 
+	 * @param cellCalendar the calendar with the day we want to know about
+	 * @param pillType the pill type of today
+	 * @return the 
+	 */
 	private int checkPastDay(GregorianCalendar cellCalendar, int pillType) {
 		GregorianCalendar todayCalendar = new GregorianCalendar();
 		//So today's pill is always shown until taken and changed in the db
-		todayCalendar.set(Calendar.HOUR_OF_DAY, 23);
-		todayCalendar.set(Calendar.MINUTE, 59);
+		todayCalendar.set(Calendar.HOUR_OF_DAY, 0);
+		todayCalendar.set(Calendar.MINUTE, 1);
 		if (cellCalendar.before(todayCalendar)) {
 			//There is only two types that future differ from past, pending and placebo
 			switch (pillType) {
@@ -79,6 +92,12 @@ public class PillDayInfo {
 		return pillType;
 	}
 
+	/**
+	 * Given the number of days of difference between the day we want to know and the day the pack was started
+	 * it calculates what kind of day it is today (placebo pill, normal pill, rest day...)
+	 * @param differenceOfDays the difference of days between the day we want to know and the day the pack was started
+	 * @return the pill type the user has to take today
+	 */
 	private int getPillType(int differenceOfDays) {
 		String pillDaysString = settings.getString("pill_type", "");//Format is NumberTakingDays/NumberPlaceboDays/NumberOfRestDays
 		if (pillDaysString == "")
@@ -124,6 +143,14 @@ public class PillDayInfo {
 		}
 	}
 
+	/**
+	 * This method gets the pill type of the day we're displaying knowing that the day is after the user started the pack
+	 * 
+	 * @param differenceOfDays The difference of days between the day we're displaying on the screen and the day the user
+	 * started the pack
+	 * @param pillDays it is an array that holds the information about the cycle of the user
+	 * @return the pill status of the day
+	 */
 	private int getPillTypeDayAfterStartPackDate(int differenceOfDays, int[] pillDays) {
 		//pillDays[0] --> NumberTakingDays, pillDays[1] --> NumberPlaceboDays, pillDays[2] --> NumberOfRestDays
 		int totalCycleDays = pillDays[0] + pillDays[1] + pillDays[2]; 
@@ -144,6 +171,16 @@ public class PillDayInfo {
 		}
 	}
 
+	/**
+	 * This method calculates the difference of days between the day and year given, and the day and year the user
+	 * started the pill pack
+	 * 
+	 * @param dayOfYear the day of the year we want to calculate the difference of days
+	 * @param year the year we want to calculate the difference of days
+	 * @param startPackDayOfYear the day of the year the user started the pack
+	 * @param startPackYear the year the user started the pack
+	 * @return the number of days of difference between the two days
+	 */
 	private int calculateDifferenceDays(int dayOfYear, int year, int startPackDayOfYear, int startPackYear) {
 
 		GregorianCalendar calendar = new GregorianCalendar();

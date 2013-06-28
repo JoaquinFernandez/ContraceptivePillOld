@@ -5,9 +5,9 @@
     android:versionName="1.9" >
 
     <uses-sdk
-        android:minSdkVersion="4"
+        android:minSdkVersion="7"
         android:targetSdkVersion="17" />
-
+        <!-- Used for the alarms -->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
@@ -43,33 +43,25 @@
             android:name="com.google.ads.AdActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
         <!-- Alarms -->
+        <!-- This one needs to be exported because it listens to the broadcast BOOT_COMPLETED -->
         <receiver android:name="com.jsolutionssp.pill.service.SetAlarms" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="com.jsolutionssp.pill.updateAlarm" />
             </intent-filter>
         </receiver>
-        <!-- 
-        <receiver android:name="com.jsolutionssp.pill.service.CycleAlarmTriggered" >
+        <!-- The next two receivers doesn't need to be exported because they are for internal use -->
+        <receiver android:name="com.jsolutionssp.pill.service.CycleAlarmTriggered" 
+            android:exported="false">
             <intent-filter>
-                <action android:name="com.jsolutionssp.pill.updateAlarm" />
+                <action android:name="triggerCycleAlarm" />
             </intent-filter>
         </receiver>
-        <receiver android:name="com.jsolutionssp.pill.service.DiaryAlarmTriggered" >
+        <receiver android:name="com.jsolutionssp.pill.service.DiaryAlarmTriggered" 
+            android:exported="false">
             <intent-filter>
-                <action android:name="com.jsolutionssp.pill.updateAlarm" />
+                <action android:name="triggerDiaryAlarm" />
             </intent-filter>
-        </receiver>
-        -->
-        <!-- Widget -->
-        <receiver android:name="com.jsolutionssp.pill.widget.WidgetProvider" >
-            <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-            </intent-filter>
-
-            <meta-data
-                android:name="android.appwidget.provider"
-                android:resource="@+xml/appwidget" />
         </receiver>
     </application>
 

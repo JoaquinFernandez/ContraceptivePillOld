@@ -112,7 +112,7 @@
     <string name="menu_about">About</string>
     <string name="menu_exit">Exit</string>
     <string name="menu_info">Info</string>
-     <string name="day_touched_note_title">Take your notes</string>
+    <string name="day_touched_note_title">Take your notes</string>
     <string name="pill_type_not_selected">You have to choose a pill type</string>
     <string name="alarm_info_toast">You can set alarms in the other tab</string>
     <string name="notification_bar_diary_text">¡Take the pill!</string>
@@ -127,13 +127,15 @@
     <string name="button_calificate">Rate!</string>
     <string name="button_gallery_plain">Plain Background</string>
     <string name="button_gallery_bricked">Bricked Background</string>
-    <string name="instructions"> \n First of all you must select your type of pill, if you 
-	    want to change what type of pill do you use, you can always change it in the 
-	    preferences screen (in the upper side select the other tab) \n \n After that you 
-	    must select the day you started the last pill pack by clicking on the day in 
-	    the calendar (you can change the month by selecting the arrows to the left 
-	    or right) \n \n Finally you can set your options, as the reminder alarms or themes 
-	    for the calendar in the preferences screen</string>
+    <string name="calendar_instructions"> \n Here you have the calendar, you can navigate through
+        months and, when clicking on a day you can write a note for that day, or change what happened
+        with the pill that day (you forgot to take it, you took it too late, etc.)</string>
+    <string name="preferences_instructions"> \n First of all you must select your type of pill, clicking
+        on choose pill type, after that you have to select which day you started the last pill pack and 
+        how do you want the calendar, if you want the calendar displaying with the Monday as first
+        day (Europe) or Sunday (America) \n \n After that you can set the alarms you want, if you 
+        want a diary alarm to be noticed when you have to take the pill, and a buy alarm so you are
+        noticed in time to buy the pill pack</string>
     <string name="contraceptive_pill_type_preferences"><item>Contraceptive Pill Type</item></string>
     <string name="week_start_day_preferences">Week Start Day</string>
     <string name="calendar_theme_preferences">Calendar Theme</string>

@@ -1,28 +1,18 @@
 
 package com.jsolutionssp.pill;
 
-import android.app.Dialog;
-import android.content.ActivityNotFoundException;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.PackageManager.NameNotFoundException;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
-import android.widget.TextView;
-
+import android.preference.PreferenceManager;
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 import com.google.analytics.tracking.android.EasyTracker;
+import com.jsolutionssp.pill.gui.AboutDialog;
+import com.jsolutionssp.pill.gui.CalendarTourDialog;
 import com.jsolutionssp.pill.preference.PreferencesFragmentV11;
 import com.jsolutionssp.pill.preference.PreferencesTabListenerV11;
 import com.jsolutionssp.pill.preference.PreferencesTabListenerV7;
@@ -64,6 +54,10 @@ public class ContraceptivePill extends SherlockFragmentActivity {
 			//Add tabs to action bar
 			actionBar.addTab(tab1);
 			actionBar.addTab(tab2);
+			if (isFirstPreferenceTime())
+				tab2.select();
+			else if (isFirstCalendarTime())
+				new CalendarTourDialog(this);
 		}
 		else {
 			//Get a reference of the action bar
@@ -82,11 +76,28 @@ public class ContraceptivePill extends SherlockFragmentActivity {
 			//Add tabs to action bar
 			actionBar.addTab(tab1);
 			actionBar.addTab(tab2);
+			if (isFirstPreferenceTime())
+				tab2.select();
+			else if (isFirstCalendarTime())
+				new CalendarTourDialog(this);
 		}
 		setContentView(R.layout.main);
-		//initialize();
-		//widgetUpdate();
 	}
+	
+	private boolean isFirstCalendarTime() {
+		SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
+		return settings.getBoolean("first_time_used_calendar", true);
+	}
+
+	/**
+	 * Checks if it is the first time the application (or the new version) is running
+	 * @return whether it is or not the first time
+	 */
+	private boolean isFirstPreferenceTime() {
+		SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
+		return settings.getBoolean("first_time_used_preference", true);
+	}
+	
 	@Override
 	public void onStart() {
 		super.onStart();
@@ -116,68 +127,10 @@ public class ContraceptivePill extends SherlockFragmentActivity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case R.id.MnuOpt1:
-			PackageManager manager = getApplicationContext().getPackageManager();
-			PackageInfo info = null;
-			try {
-				info = manager.getPackageInfo(getPackageName(), 0);
-			} catch (NameNotFoundException e) {
-				Log.e("ContraceptivePill", "exception",  e);
-			}
-			String version;
-			if (info == null) {
-				version = null;
-			}
-			else
-				version = info.versionName;
-
-			String myVersion = getResources().getString(R.string.app_version);
-			//get the TextView from the custom_toast layout
-
-			final Dialog dialog = new Dialog(this,R.style.NoTitleDialog);
-			dialog.setContentView(R.layout.about_dialog);
-
-			TextView text = (TextView) dialog.findViewById(R.id.about_dialog_version);
-			text.setText(myVersion + " " + version);
-
-			Button button = (Button) dialog.findViewById(R.id.about_dialog_rate);
-			button.setOnClickListener(new OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					try {
-						Intent intent = new Intent(Intent.ACTION_VIEW); 
-						intent.setData(Uri.parse("market://details?id=com.jsolutionssp.pill")); 
-						startActivity(intent);
-					} catch (ActivityNotFoundException e) {
-						Intent intent = new Intent(Intent.ACTION_VIEW); 
-						intent.setData(Uri.parse("http://play.google.com/store/apps/details?id=com.jsolutionssp.pill")); 
-						startActivity(intent);
-					}
-					dialog.dismiss();
-					finish();
-				}
-			});
-			Button button2 = (Button) dialog.findViewById(R.id.about_dialog_ok);
-			button2.setOnClickListener(new OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					dialog.dismiss();
-				}
-			});
-			dialog.show();
+			new AboutDialog(this);
 			return true;
 		case R.id.MnuOpt2:
-			final Dialog intructionsDialog = new Dialog(ContraceptivePill.this, R.style.NoTitleDialog);
-			intructionsDialog.setContentView(R.layout.instructions_dialog);
-			TextView dialogText = (TextView) intructionsDialog.findViewById(R.id.info_dialog_text);
-			dialogText.setText(R.string.instructions);
-			Button button1 = (Button) intructionsDialog.findViewById(R.id.info_dialog_button);
-			button1.setOnClickListener(new OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					intructionsDialog.dismiss();
-				}
-			});
-			intructionsDialog.show();
+			//Create instructions
 			return true;
 		case R.id.MnuOpt3:
 			finish();

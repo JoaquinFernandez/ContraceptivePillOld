@@ -1347,14 +1347,14 @@ containing a value of this type.
         public static final int dialog_time_select=0x7f03001f;
         public static final int fragment_calendar=0x7f030020;
         public static final int info_dialog=0x7f030021;
-        public static final int instructions_dialog=0x7f030022;
-        public static final int main=0x7f030023;
-        public static final int number_picker=0x7f030024;
-        public static final int number_picker_preference=0x7f030025;
-        public static final int pref_number_picker=0x7f030026;
-        public static final int select_pill_type=0x7f030027;
-        public static final int sherlock_spinner_dropdown_item=0x7f030028;
-        public static final int sherlock_spinner_item=0x7f030029;
+        public static final int main=0x7f030022;
+        public static final int number_picker=0x7f030023;
+        public static final int number_picker_preference=0x7f030024;
+        public static final int pref_number_picker=0x7f030025;
+        public static final int select_pill_type=0x7f030026;
+        public static final int sherlock_spinner_dropdown_item=0x7f030027;
+        public static final int sherlock_spinner_item=0x7f030028;
+        public static final int tour_dialog=0x7f030029;
     }
     public static final class menu {
         public static final int menu=0x7f0e0000;
@@ -1418,20 +1418,21 @@ containing a value of this type.
         public static final int button_no=0x7f06002d;
         public static final int button_ok=0x7f06002c;
         public static final int button_save=0x7f06002e;
-        public static final int buy_alarm_preferences=0x7f06004a;
+        public static final int buy_alarm_preferences=0x7f06004b;
+        public static final int calendar_instructions=0x7f060044;
         public static final int calendar_tab_name=0x7f06001f;
-        public static final int calendar_theme_preferences=0x7f060047;
+        public static final int calendar_theme_preferences=0x7f060048;
         public static final int company_name=0x7f060016;
-        public static final int contraceptive_pill_type_preferences=0x7f060045;
+        public static final int contraceptive_pill_type_preferences=0x7f060046;
         public static final int day_touched_note_title=0x7f060035;
         public static final int day_touched_text=0x7f06003d;
         public static final int dialog_cancel=0x7f060001;
         public static final int dialog_picker_title=0x7f060002;
         public static final int dialog_set_number=0x7f060000;
-        public static final int diary_alarm_preferences=0x7f060049;
+        public static final int diary_alarm_preferences=0x7f06004a;
         public static final int email=0x7f060015;
         public static final int help_traducing=0x7f060017;
-        public static final int instructions=0x7f060044;
+        public static final int instructions=0x7f060052;
         public static final int menu_about=0x7f060032;
         public static final int menu_exit=0x7f060033;
         public static final int menu_info=0x7f060034;
@@ -1451,10 +1452,11 @@ containing a value of this type.
         public static final int preferences_activity_title=0x7f060013;
         public static final int preferences_alarms_separator=0x7f06002a;
         public static final int preferences_calendar_separator=0x7f060029;
+        public static final int preferences_instructions=0x7f060045;
         public static final int preferences_tab_name=0x7f060020;
-        public static final int previous_days_preferences=0x7f06004b;
+        public static final int previous_days_preferences=0x7f06004c;
         public static final int rest_name=0x7f060040;
-        public static final int ringtone_preferences=0x7f06004f;
+        public static final int ringtone_preferences=0x7f060050;
         public static final int select_alarm_hour_dialog_title=0x7f060026;
         public static final int select_cyclealarm_dialog_title=0x7f060024;
         public static final int select_diaryalarm_dialog_title=0x7f060023;
@@ -1462,15 +1464,15 @@ containing a value of this type.
         public static final int select_prevdays_dialog_title=0x7f060025;
         public static final int select_sound_dialog_title=0x7f060027;
         public static final int select_startday_dialog_title=0x7f060021;
-        public static final int select_theme_dialog_title=0x7f060050;
+        public static final int select_theme_dialog_title=0x7f060051;
         public static final int select_vibrate_dialog_title=0x7f060028;
         public static final int set_taking_pillday_toast=0x7f06003e;
-        public static final int set_time_preferences=0x7f06004c;
-        public static final int sound_preferences=0x7f06004d;
-        public static final int start_pack_date_preferences=0x7f060048;
+        public static final int set_time_preferences=0x7f06004d;
+        public static final int sound_preferences=0x7f06004e;
+        public static final int start_pack_date_preferences=0x7f060049;
         public static final int title_pill_select=0x7f060018;
-        public static final int vibration_preferences=0x7f06004e;
-        public static final int week_start_day_preferences=0x7f060046;
+        public static final int vibration_preferences=0x7f06004f;
+        public static final int week_start_day_preferences=0x7f060047;
     }
     public static final class style {
         public static final int CenteredDialog=0x7f070060;
@@ -1573,8 +1575,7 @@ containing a value of this type.
     }
     public static final class xml {
         public static final int analytics=0x7f050000;
-        public static final int appwidget=0x7f050001;
-        public static final int preferences=0x7f050002;
+        public static final int preferences=0x7f050001;
     }
     public static final class styleable {
         /** Attributes that can be used with a HelloGallery.

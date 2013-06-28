@@ -28,8 +28,8 @@ public final class R {
 		public static final int dialog_cancel = 0x7f060001;
 	}
 	public static final class layout {
-		public static final int pref_number_picker = 0x7f030026;
-		public static final int number_picker = 0x7f030024;
+		public static final int pref_number_picker = 0x7f030025;
+		public static final int number_picker = 0x7f030023;
 		public static final int dialog_number_picker = 0x7f03001d;
 	}
 	public static final class styleable {

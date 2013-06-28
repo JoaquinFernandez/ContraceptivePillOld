@@ -5,14 +5,13 @@ import java.util.GregorianCalendar;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
-import android.appwidget.AppWidgetManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+
 import com.jsolutionssp.pill.PillDayInfo;
-import com.jsolutionssp.pill.widget.WidgetProvider;
 
 public class SetAlarms extends BroadcastReceiver {
 
@@ -56,8 +55,6 @@ public class SetAlarms extends BroadcastReceiver {
                                 alarmManager.set(AlarmManager.RTC_WAKEUP, cycleAlarmTime, pendingIntent);
                         }
                 }
-                WidgetProvider.updateWidgetContent(context,
-                                AppWidgetManager.getInstance(context), pillType);
                 //Set next alarm if not changed before
                 calendar.set(Calendar.DAY_OF_YEAR, (calendar.get(Calendar.DAY_OF_YEAR) + 1));
                 calendar.set(Calendar.HOUR_OF_DAY, 0);
