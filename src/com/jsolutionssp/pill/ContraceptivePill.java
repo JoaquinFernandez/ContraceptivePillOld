@@ -67,7 +67,7 @@ public class ContraceptivePill extends SherlockFragmentActivity {
 			//Get a reference of the action bar
 			ActionBar actionBar = getSupportActionBar();
 			//Set the navigation mode to tabs
-			actionBar.setNavigationMode(
+			actionBar.setNavigationMode( 
 					ActionBar.NAVIGATION_MODE_TABS);
 	
 			//Create tabs and add listeners
