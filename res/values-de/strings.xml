@@ -5,7 +5,6 @@
     <string name="email">pill@jfma.es \n</string>
     <string name="company_name">JFMA ™</string>
     <string name="help_traducing"> Help us translate the application to your language. Write us!</string>
-  <string name="title_pill_select">W\ählen Sie Art der Antibabypille</string>
   <string-array name="pill_types">
     <item>21 Pillen</item>
     <item>22 Pillen</item>
@@ -35,75 +34,4 @@
     <item>Oktober</item>
     <item>November</item>
     <item>Dezember</item>
-  </string-array>
-  <string-array name="theme_names">
-    <item>Rosa</item>
-    <item>gr\ün</item>
-    <item>blau</item>
-  </string-array>
-  <string-array name="preferences_categories">
-    <item>Art die Antibabypille</item>
-    <item>Wochenbeginn</item>
-    <item>Kalendereinstellungen</item>
-    <item>T\äglicher Alarm</item>
-    <item>Uhr</item>
-    <item>Alarmsingnal</item>
-    <item>Vibrationsalarm</item>
-    <item>Alarma de compra</item>
-    <item>Dias antes</item>
-    <item>Uhr</item>
-    <item>Alarmsingnal</item>
-    <item>Vibrationsalarm</item>
-  </string-array>
-  <string-array name="start_week_day">
-    <item>Montag</item>
-    <item>Sonntag</item>
-  </string-array>
-  <string-array name="yes_no_array">
-    <item>Nein</item>
-    <item>Ja</item>
-  </string-array>
-  <string-array name="prev_alarm_array">
-    <item>0</item>
-    <item>1</item>
-    <item>2</item>
-    <item>3</item>
-    <item>4</item>
-  </string-array>
-  <string name="select_theme_dialog_title">W\ählen Sie eine Farbe</string>
-  <string name="select_startday_dialog_title">Wochenbeginn</string>
-  <string name="select_pill_type_dialog_title">W\ählen sie die art pille</string>
-  <string name="select_diaryalarm_dialog_title">M\öchten Sie Tagesalarm?</string>
-  <string name="select_cyclealarm_dialog_title">M\öchten Sie monatlich Alarm? zu sie Kaufen der Box</string>
-  <string name="select_prevdays_dialog_title">Wie viele Tage vor dem Start der Box?</string>
-  <string name="select_alarm_hour_dialog_title">Setzen sie die uhr</string>
-  <string name="select_sound_dialog_title">Alarmsingnal</string>
-  <string name="select_vibrate_dialog_title">Vibrationsalarm</string>
-  <string name="preferences_calendar_separator">Kalendar</string>
-  <string name="preferences_alarms_separator">Alarme</string>
-  <string name="pill_name">Pille</string>
-  <string name="button_ok">Speichern</string>
-  <string name="button_no">Verwerfen</string>
-  <string name="menu_about">About</string>
-  <string name="menu_exit">Exit</string>
-  <string name="menu_info">Info</string>
-  <string name="pill_type_not_selected">Sie M\üssen die art pillen wählen</string>
-  <string name="alarm_info_toast">In das andere Fenster k\önnen Sie der Alarme einstellen</string>
-  <string name="notification_bar_diary_text">Nehmen Sie die pillen!</string>
-  <string name="notification_bar_cycle_text1">In  </string>
-  <string name="notification_bar_cycle_text2"> Tage sie starten der Box!</string>
-  <string name="notification_bar_cycle_text3">Heute beginnen sie der Box!</string>
-  <string name="notification_bar_cycle_text4">Morgen beginnt sie der Box!</string>
-  <string name="day_touched_text">Wollen Sie den Einleitung der Box ver\ändern?</string>
-  <string name="set_taking_pillday_toast">Klicken Sie oberhalb der Tag des Starts der Box</string>
-  <string name="appwidget_label">Klicken Sie oberhalb der Tag des Starts der Box</string>
-  <string name="rest_name">Pause</string>
-  <string name="button_calificate">Bewerten!</string>
-  <string name="button_gallery_plain">Hintergrund  glätten</string>
-  <string name="button_gallery_bricked">Hintergrund Quadrat</string>
-  <string name="instructions">
-    1 º) w\ählen Sie Ihre Art der Pille. Sie k\önnen sie jederzeit \ändern in der Registerkarte Einstellungen. \n \n
-    2 º) W\ählen Sie den Tag Sie nahm die erste Pille der endg\ültigen Fall \n \n
-    3 º) Stellen Sie Ihren Wecker in der Registerkarte Einstellungen
-  </string>
 </resources>
