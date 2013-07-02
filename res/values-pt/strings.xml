@@ -5,7 +5,6 @@
     <string name="email">pill@jfma.es \n</string>
     <string name="company_name">JFMA ™</string>
     <string name="help_traducing"> Help us translate the application to your language. Write us!</string>
-  <string name="title_pill_select">Escolha o tipo de pílula</string>
   <string-array name="pill_types">
     <item>21 pílulas</item>
     <item>22 pílulas</item>

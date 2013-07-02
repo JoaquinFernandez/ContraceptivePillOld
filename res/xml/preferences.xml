@@ -7,7 +7,7 @@
             android:entryValues="@array/pill_types_values"
             android:key="pill_type"
             android:persistent="true"
-            android:title="@string/title_pill_select" />
+            android:title="@string/contraceptive_pill_type_preferences" />
          <com.jsolutionssp.pill.preference.DatePickerPreference
             android:key="start_pack_date"
             android:persistent="true"
@@ -17,7 +17,7 @@
             android:entries="@array/start_week_day"
             android:entryValues="@array/start_week_day"
             android:persistent="true"
-            android:title="@string/select_startday_dialog_title" />
+            android:title="@string/week_start_day_preferences" />
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/preferences_alarms_separator" >
         <!--  Diary alarm -->

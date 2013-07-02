@@ -60,6 +60,8 @@
     <string name="pill_placebo">Placebo pill to take</string>
     <string name="pill_rest_day">Rest Day</string>
     <string name="calendar_tab_name">Calendar</string>
+    <string name="preferences_calendar_separator">Calendar</string>
+    <string name="preferences_alarms_separator">Alarms</string>
     <string name="preferences_tab_name">Settings</string>
     <string name="button_ok">OK</string>
     <string name="button_save">Save</string>
@@ -85,6 +87,7 @@
         day (Europe) or Sunday (America) \n \n After that you can set the alarms you want, if you 
         want a diary alarm to be noticed when you have to take the pill, and a buy alarm so you are
         noticed in time to buy the pill pack</string>
+        <string name="day_touched_text">Are you sure you want to change the pill taking cycle starting day?</string>
     <string name="contraceptive_pill_type_preferences"><item>Contraceptive pill type</item></string>
     <string name="week_start_day_preferences">Week start day</string>
     <string name="start_pack_date_preferences">Pack start date</string>

@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_margin="10dp"
-            android:contentDescription="@string/day_touched_text"
+            android:contentDescription="@string/day_touched_note_title"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <TextView
