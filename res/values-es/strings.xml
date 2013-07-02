@@ -68,16 +68,18 @@
     <string name="button_calificate">¡Opina!</string>
     <string name="calendar_instructions"> \n Aquí está el calendario, puedes navegar por los meses y, 
         cuando clickes en un día, puedes escribir notas sobre ese día, o cambiar lo que pasó con la 
-        píldora ese dia (se te olvidó tomarla, o la tomaste muy tarde, etc.)</string>
-    <string name="preferences_instructions"> \n Lo primero, debes seleccionar el tipo de píldora
-        clicando en tipo de píldora anticonceptiva, después elige el día en que comenzaste a tomar la primera
-        pastilla de la ultima caja de pastillas. Después elige el día en que quieres que comience el calendario, 
-        si en Lunes (calendario europeo) o en Domingo (calendario americano) \n \n Por último puedes elegir las
-        alarmas que quieras, diaria para que te recuerde tomar la píldora, y también una para que te avise de
-        cuando debes comprar la caja, seleccionando cuántos días antes quieres que te avise.</string>
+        píldora ese día (se te olvidó tomarla, o la tomaste muy tarde, etc.)</string>
+     <string name="preferences_instructions_first"> Por favor, selecciona el tipo de píldora que utilizas,
+         pinchando en tipo de píldora anticonceptiva</string>
+    <string name="preferences_instructions_second"> Ahora por favor, elige el día en que comenzaste a tomar
+        la primera píldora de la última caja pinchando en comienzo de ciclo</string>
+    <string name="preferences_instructions_third"> Ahora por gavor, elige el día en que quieres que 
+        comience la semana en el calendario /n Lunes (europeo) /n Domingo (americano)</string>
+    <string name="preferences_instructions_fourth"> Ahora puede seleccione las alarmas, para que le avise
+        de cuando tiene que tomar la pildora, o cuando debe comprarla</string>
     <string name="contraceptive_pill_type_preferences"><item>Tipo de píldora anticonceptiva</item></string>
     <string name="week_start_day_preferences">Día de comienzo de la semana en el calendario</string>
-    <string name="start_pack_date_preferences">Fecha en que empezaste la ultima caja de píldoras</string>
+    <string name="start_pack_date_preferences">Comienzo de ciclo</string>
     <string name="diary_alarm_preferences">Alarma diaria</string>
     <string name="buy_alarm_preferences">Alarma de compra</string>
     <string name="previous_days_preferences">Días previos a comenzar la caja</string>
