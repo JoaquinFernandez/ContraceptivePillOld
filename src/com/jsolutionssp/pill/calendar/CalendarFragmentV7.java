@@ -1,11 +1,12 @@
-package com.jsolutionssp.pill;
-
-import com.actionbarsherlock.app.SherlockFragment;
+package com.jsolutionssp.pill.calendar;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.actionbarsherlock.app.SherlockFragment;
+import com.jsolutionssp.pill.R;
 
 public class CalendarFragmentV7 extends SherlockFragment {
 	@Override

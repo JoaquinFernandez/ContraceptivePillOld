@@ -1,6 +1,4 @@
-package com.jsolutionssp.pill;
-
-import com.actionbarsherlock.app.SherlockFragmentActivity;
+package com.jsolutionssp.pill.calendar;
 
 import android.app.ActionBar;
 import android.app.ActionBar.TabListener;
@@ -8,6 +6,9 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.util.Log;
+
+import com.actionbarsherlock.app.SherlockFragmentActivity;
+import com.jsolutionssp.pill.R;
 
 
 public class CalendarTabListenerV11<T extends Fragment> implements TabListener {

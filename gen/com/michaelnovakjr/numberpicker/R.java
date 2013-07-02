@@ -8,11 +8,11 @@ package com.michaelnovakjr.numberpicker;
 
 public final class R {
 	public static final class id {
-		public static final int increment = 0x7f08005b;
-		public static final int num_picker = 0x7f08004d;
-		public static final int pref_num_picker = 0x7f08005e;
-		public static final int numpicker_input = 0x7f08005c;
-		public static final int decrement = 0x7f08005d;
+		public static final int increment = 0x7f080057;
+		public static final int num_picker = 0x7f080049;
+		public static final int pref_num_picker = 0x7f08005a;
+		public static final int numpicker_input = 0x7f080058;
+		public static final int decrement = 0x7f080059;
 	}
 	public static final class style {
 		public static final int NumberPickerInputText = 0x7f070000;
@@ -28,9 +28,9 @@ public final class R {
 		public static final int dialog_cancel = 0x7f060001;
 	}
 	public static final class layout {
-		public static final int pref_number_picker = 0x7f030025;
-		public static final int number_picker = 0x7f030023;
-		public static final int dialog_number_picker = 0x7f03001d;
+		public static final int pref_number_picker = 0x7f030024;
+		public static final int number_picker = 0x7f030022;
+		public static final int dialog_number_picker = 0x7f03001c;
 	}
 	public static final class styleable {
 		public static final int numberpicker_startRange = 0;
@@ -41,44 +41,44 @@ public final class R {
 		public static final int numberpicker_endRange = 1;
 	}
 	public static final class drawable {
-		public static final int numberpicker_down_disabled_focused_holo_dark = 0x7f02007b;
-		public static final int numberpicker_input_selected = 0x7f02008b;
-		public static final int numberpicker_down_normal_holo_dark = 0x7f020082;
-		public static final int numberpicker_down_btn_holo_light = 0x7f020078;
-		public static final int numberpicker_up_focused_holo_light = 0x7f020095;
-		public static final int numberpicker_up_disabled_holo_dark = 0x7f020093;
-		public static final int numberpicker_up_normal_holo_dark = 0x7f020097;
-		public static final int numberpicker_up_pressed_holo = 0x7f02009a;
-		public static final int numberpicker_up_disabled_focused = 0x7f020090;
-		public static final int numberpicker_down_disabled = 0x7f020079;
-		public static final int numberpicker_down_selected = 0x7f020086;
-		public static final int numberpicker_up_normal_holo_light = 0x7f020098;
-		public static final int numberpicker_up_disabled = 0x7f02008f;
-		public static final int numberpicker_input = 0x7f020087;
-		public static final int numberpicker_down_pressed_holo = 0x7f020085;
-		public static final int numberpicker_up_pressed = 0x7f020099;
-		public static final int numberpicker_input_disabled = 0x7f020088;
-		public static final int numberpicker_up_disabled_focused_holo_light = 0x7f020092;
-		public static final int numberpicker_down_disabled_holo_dark = 0x7f02007d;
-		public static final int numberpicker_up_normal = 0x7f020096;
-		public static final int numberpicker_down_focused_holo_dark = 0x7f02007f;
-		public static final int numberpicker_up_focused_holo_dark = 0x7f020094;
-		public static final int numberpicker_down_normal_holo_light = 0x7f020083;
-		public static final int numberpicker_up_btn = 0x7f02008c;
-		public static final int numberpicker_input_normal = 0x7f020089;
-		public static final int numberpicker_down_btn = 0x7f020076;
-		public static final int numberpicker_down_focused_holo_light = 0x7f020080;
-		public static final int numberpicker_up_btn_holo_light = 0x7f02008e;
-		public static final int numberpicker_down_btn_holo_dark = 0x7f020077;
-		public static final int numberpicker_down_disabled_focused_holo_light = 0x7f02007c;
-		public static final int numberpicker_up_selected = 0x7f02009b;
-		public static final int numberpicker_down_disabled_focused = 0x7f02007a;
-		public static final int numberpicker_input_pressed = 0x7f02008a;
-		public static final int numberpicker_up_disabled_focused_holo_dark = 0x7f020091;
-		public static final int numberpicker_down_pressed = 0x7f020084;
-		public static final int numberpicker_down_disabled_holo_light = 0x7f02007e;
-		public static final int numberpicker_down_normal = 0x7f020081;
-		public static final int numberpicker_up_btn_holo_dark = 0x7f02008d;
+		public static final int numberpicker_down_disabled_focused_holo_dark = 0x7f02007a;
+		public static final int numberpicker_input_selected = 0x7f02008a;
+		public static final int numberpicker_down_normal_holo_dark = 0x7f020081;
+		public static final int numberpicker_down_btn_holo_light = 0x7f020077;
+		public static final int numberpicker_up_focused_holo_light = 0x7f020094;
+		public static final int numberpicker_up_disabled_holo_dark = 0x7f020092;
+		public static final int numberpicker_up_normal_holo_dark = 0x7f020096;
+		public static final int numberpicker_up_pressed_holo = 0x7f020099;
+		public static final int numberpicker_up_disabled_focused = 0x7f02008f;
+		public static final int numberpicker_down_disabled = 0x7f020078;
+		public static final int numberpicker_down_selected = 0x7f020085;
+		public static final int numberpicker_up_normal_holo_light = 0x7f020097;
+		public static final int numberpicker_up_disabled = 0x7f02008e;
+		public static final int numberpicker_input = 0x7f020086;
+		public static final int numberpicker_down_pressed_holo = 0x7f020084;
+		public static final int numberpicker_up_pressed = 0x7f020098;
+		public static final int numberpicker_input_disabled = 0x7f020087;
+		public static final int numberpicker_up_disabled_focused_holo_light = 0x7f020091;
+		public static final int numberpicker_down_disabled_holo_dark = 0x7f02007c;
+		public static final int numberpicker_up_normal = 0x7f020095;
+		public static final int numberpicker_down_focused_holo_dark = 0x7f02007e;
+		public static final int numberpicker_up_focused_holo_dark = 0x7f020093;
+		public static final int numberpicker_down_normal_holo_light = 0x7f020082;
+		public static final int numberpicker_up_btn = 0x7f02008b;
+		public static final int numberpicker_input_normal = 0x7f020088;
+		public static final int numberpicker_down_btn = 0x7f020075;
+		public static final int numberpicker_down_focused_holo_light = 0x7f02007f;
+		public static final int numberpicker_up_btn_holo_light = 0x7f02008d;
+		public static final int numberpicker_down_btn_holo_dark = 0x7f020076;
+		public static final int numberpicker_down_disabled_focused_holo_light = 0x7f02007b;
+		public static final int numberpicker_up_selected = 0x7f02009a;
+		public static final int numberpicker_down_disabled_focused = 0x7f020079;
+		public static final int numberpicker_input_pressed = 0x7f020089;
+		public static final int numberpicker_up_disabled_focused_holo_dark = 0x7f020090;
+		public static final int numberpicker_down_pressed = 0x7f020083;
+		public static final int numberpicker_down_disabled_holo_light = 0x7f02007d;
+		public static final int numberpicker_down_normal = 0x7f020080;
+		public static final int numberpicker_up_btn_holo_dark = 0x7f02008c;
 	}
 	public static final class attr {
 		public static final int wrap = 0x7f010004;

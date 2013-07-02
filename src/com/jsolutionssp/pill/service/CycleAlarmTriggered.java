@@ -7,18 +7,14 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 
 import com.jsolutionssp.pill.ContraceptivePill;
 import com.jsolutionssp.pill.R;
 
 public class CycleAlarmTriggered extends BroadcastReceiver {
 
-	@Override
-	public void onReceive(Context context, Intent intent) {
-		// TODO Auto-generated method stub
-		
-	}
-    /*private Context context;
+	private Context context;
 	private SharedPreferences settings;
 
 	@Override
@@ -28,7 +24,7 @@ public class CycleAlarmTriggered extends BroadcastReceiver {
 		int cycle = settings.getInt("cycleAlarm", -1);
 		if (cycle == 1) {
 			String tickerText;
-			int day = settings.getInt("prevAlarmDays", -1);
+			int day = settings.getInt("cycle_alarm_prev_days", -1);
 			if (day == -1)
 				tickerText = null;
 			else if (day == 0)
@@ -42,10 +38,10 @@ public class CycleAlarmTriggered extends BroadcastReceiver {
 				tickerText += context.getResources().getText(R.string.notification_bar_cycle_text2).toString();
 			}
 			boolean sound = false;
-			if (settings.getInt("cycleAlarmSound", -1) == 1)
+			if (settings.getInt("cycle_alarm_ringtone", -1) == 1)
 				sound = true;
 			boolean vibrate = false;
-			if (settings.getInt("cycleAlarmVibrate", -1) == 1)
+			if (settings.getInt("cycle_alarm_vibrate", -1) == 1)
 				vibrate = true;
 			
 			if (tickerText != null)
@@ -71,6 +67,10 @@ public class CycleAlarmTriggered extends BroadcastReceiver {
 		if (sound) {
 			notification.defaults |= Notification.DEFAULT_SOUND;
 			notification.flags |= Notification.FLAG_INSISTENT;
+			String audio = settings.getString("cycle_alarm_ringtone", "");
+            if (audio != "")
+                    notification.sound = Uri.parse(audio);
+            //else use default
 		}
 		if (vibrate) {
 			notification.defaults |= Notification.DEFAULT_VIBRATE;
@@ -81,7 +81,7 @@ public class CycleAlarmTriggered extends BroadcastReceiver {
 		notification.ledOffMS = 900;
 		notification.flags |= Notification.FLAG_SHOW_LIGHTS;
 		
-		final int HELLO_ID = R.id.preferences_cycle_alarm;
+		final int HELLO_ID = (int) Math.random()*10000000;
 		mNotificationManager.notify(HELLO_ID, notification);
-	}*/
+	}
 }

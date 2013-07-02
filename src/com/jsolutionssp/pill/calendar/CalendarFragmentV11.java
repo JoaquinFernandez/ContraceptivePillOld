@@ -1,10 +1,12 @@
-package com.jsolutionssp.pill;
+package com.jsolutionssp.pill.calendar;
 
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.jsolutionssp.pill.R;
 
 public class CalendarFragmentV11 extends Fragment {
 	@Override
