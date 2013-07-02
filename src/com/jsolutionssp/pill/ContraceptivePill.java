@@ -5,6 +5,8 @@ import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.widget.Toast;
+
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.Menu;
@@ -16,7 +18,6 @@ import com.jsolutionssp.pill.calendar.CalendarFragmentV7;
 import com.jsolutionssp.pill.calendar.CalendarTabListenerV11;
 import com.jsolutionssp.pill.calendar.CalendarTabListenerV7;
 import com.jsolutionssp.pill.gui.AboutDialog;
-import com.jsolutionssp.pill.gui.CalendarTourDialog;
 import com.jsolutionssp.pill.preference.PreferencesFragmentV11;
 import com.jsolutionssp.pill.preference.PreferencesTabListenerV11;
 import com.jsolutionssp.pill.preference.PreferencesTabListenerV7;
@@ -44,6 +45,7 @@ public class ContraceptivePill extends SherlockFragmentActivity {
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
 			//Get a reference of the action bar
 			android.app.ActionBar actionBar = getActionBar();
+			actionBar.setDisplayShowTitleEnabled(false);
 			//Set the navigation mode to tabs
 			actionBar.setNavigationMode(
 					ActionBar.NAVIGATION_MODE_TABS);
@@ -60,12 +62,19 @@ public class ContraceptivePill extends SherlockFragmentActivity {
 			actionBar.addTab(tab2);
 			if (isFirstPreferenceTime())
 				tab2.select();
-			else if (isFirstCalendarTime())
-				new CalendarTourDialog(this);
+			else if (isFirstCalendarTime()) {
+				String text = getResources().getString(R.string.calendar_instructions);
+				Toast t = Toast.makeText(getApplicationContext(), 
+						text, Toast.LENGTH_LONG);
+				t.show();
+				t.show();
+				t.show();
+			}
 		}
 		else {
 			//Get a reference of the action bar
 			ActionBar actionBar = getSupportActionBar();
+			actionBar.setDisplayShowTitleEnabled(false);
 			//Set the navigation mode to tabs
 			actionBar.setNavigationMode( 
 					ActionBar.NAVIGATION_MODE_TABS);
@@ -82,8 +91,8 @@ public class ContraceptivePill extends SherlockFragmentActivity {
 			actionBar.addTab(tab2);
 			if (isFirstPreferenceTime())
 				tab2.select();
-			else if (isFirstCalendarTime())
-				new CalendarTourDialog(this);
+			//else if (isFirstCalendarTime())
+				//new CalendarTourDialog(this);
 		}
 		setContentView(R.layout.main);
 	}

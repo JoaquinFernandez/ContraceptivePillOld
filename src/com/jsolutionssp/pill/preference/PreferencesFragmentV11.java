@@ -13,10 +13,10 @@ import android.preference.Preference;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
+import android.widget.Toast;
 
 import com.jsolutionssp.pill.R;
 import com.jsolutionssp.pill.db.DayStorageDB;
-import com.jsolutionssp.pill.gui.PreferenceTourDialog;
 import com.jsolutionssp.pill.service.SetAlarms;
 
 public class PreferencesFragmentV11 extends PreferenceFragment implements OnSharedPreferenceChangeListener {
@@ -33,7 +33,32 @@ public class PreferencesFragmentV11 extends PreferenceFragment implements OnShar
 			checkPreference(getPreferenceScreen().getPreference(i));
 		}
 		if (isFirstTime())
-			new PreferenceTourDialog(getActivity().getApplicationContext());
+			preferenceTour(0);
+	}
+
+	private void preferenceTour(int intructions) {
+		int id;
+		switch (intructions) {
+		case 0 :
+			id = R.string.preferences_instructions_first;
+			break;
+		case 1 :
+			id = R.string.preferences_instructions_second;
+			break;
+		case 2 :
+			id = R.string.preferences_instructions_third;
+			break;
+		default :
+			id = R.string.preferences_instructions_fourth;
+			PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext()).edit()
+			.putBoolean("first_time_used_preference", false).commit();
+			break;
+		}
+		String text = getResources().getString(id);
+		Toast t = Toast.makeText(getActivity().getApplicationContext(), 
+				text, Toast.LENGTH_LONG);
+		t.show();
+		t.show();
 	}
 
 	@Override
@@ -59,10 +84,18 @@ public class PreferencesFragmentV11 extends PreferenceFragment implements OnShar
 		if (key.equalsIgnoreCase("pill_type")) {
 			DayStorageDB db = new DayStorageDB(this.getActivity());
 			db.invalidateDatabase();
+			if (isFirstTime())
+				preferenceTour(1);
 		}
 		if (key.equalsIgnoreCase("start_pack_date")) {
 			DayStorageDB db = new DayStorageDB(this.getActivity());
 			db.invalidateDatabase();
+			if (isFirstTime())
+				preferenceTour(2);
+		}
+		if (key.equalsIgnoreCase("week_start_day_preferences")) {
+			if (isFirstTime())
+				preferenceTour(3);
 		}
 		//Just need to check if cycle_alarm or diary_alarm strings are in the key of the preference changed
 		//because any preference relative to the same alarm start with the same prefix

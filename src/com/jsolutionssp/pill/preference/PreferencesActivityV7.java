@@ -11,13 +11,13 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceManager;
+import android.widget.Toast;
 
 import com.actionbarsherlock.app.SherlockPreferenceActivity;
 import com.actionbarsherlock.view.MenuItem;
 import com.jsolutionssp.pill.ContraceptivePill;
 import com.jsolutionssp.pill.R;
 import com.jsolutionssp.pill.db.DayStorageDB;
-import com.jsolutionssp.pill.gui.PreferenceTourDialog;
 import com.jsolutionssp.pill.service.SetAlarms;
 
 /**
@@ -40,7 +40,32 @@ public class PreferencesActivityV7 extends SherlockPreferenceActivity implements
 		//Support for going back in the preference activity on the action bar
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		if (isFirstTime())
-			new PreferenceTourDialog(this);
+			preferenceTour(0);
+	}
+	
+	private void preferenceTour(int intructions) {
+		int id;
+		switch (intructions) {
+		case 0 :
+			id = R.string.preferences_instructions_first;
+			break;
+		case 1 :
+			id = R.string.preferences_instructions_second;
+			break;
+		case 2 :
+			id = R.string.preferences_instructions_third;
+			break;
+		default :
+			id = R.string.preferences_instructions_fourth;
+			PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit()
+			.putBoolean("first_time_used_preference", false).commit();
+			break;
+		}
+		String text = getResources().getString(id);
+		Toast t = Toast.makeText(getApplicationContext(), 
+				text, Toast.LENGTH_LONG);
+		t.show();
+		t.show();
 	}
 
 	@Override
@@ -80,10 +105,19 @@ public class PreferencesActivityV7 extends SherlockPreferenceActivity implements
 		if (key.equalsIgnoreCase("pill_type")) {
 			DayStorageDB db = new DayStorageDB(this);
 			db.invalidateDatabase();
+			if (isFirstTime())
+				preferenceTour(1);
 		}
 		if (key.equalsIgnoreCase("start_pack_date")) {
 			DayStorageDB db = new DayStorageDB(this);
 			db.invalidateDatabase();
+			if (isFirstTime())
+				preferenceTour(2);
+			
+		}
+		if (key.equalsIgnoreCase("week_start_day_preferences")) {
+			if (isFirstTime())
+				preferenceTour(3);
 		}
 		//Just need to check if cycle_alarm or diary_alarm strings are in the key of the preference changed
 		//because any preference relative to the same alarm start with the same prefix
