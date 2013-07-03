@@ -661,7 +661,6 @@ int string pill_taken_late 0x7f06001a
 int string preferences_activity_title 0x7f060013
 int string preferences_alarms_separator 0x7f060020
 int string preferences_calendar_separator 0x7f06001f
-int string preferences_instructions 0x7f060041
 int string preferences_instructions_first 0x7f060032
 int string preferences_instructions_fourth 0x7f060035
 int string preferences_instructions_second 0x7f060033

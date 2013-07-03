@@ -115,7 +115,7 @@ public class PreferencesActivityV7 extends SherlockPreferenceActivity implements
 				preferenceTour(2);
 			
 		}
-		if (key.equalsIgnoreCase("week_start_day_preferences")) {
+		if (key.equalsIgnoreCase("start_week_day")) {
 			if (isFirstTime())
 				preferenceTour(3);
 		}

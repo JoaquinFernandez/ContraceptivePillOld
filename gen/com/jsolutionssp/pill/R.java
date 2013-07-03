@@ -1433,7 +1433,6 @@ containing a value of this type.
         public static final int preferences_activity_title=0x7f060013;
         public static final int preferences_alarms_separator=0x7f060020;
         public static final int preferences_calendar_separator=0x7f06001f;
-        public static final int preferences_instructions=0x7f060041;
         public static final int preferences_instructions_first=0x7f060032;
         public static final int preferences_instructions_fourth=0x7f060035;
         public static final int preferences_instructions_second=0x7f060033;
