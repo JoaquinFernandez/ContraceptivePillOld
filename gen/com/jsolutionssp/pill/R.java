@@ -1131,9 +1131,9 @@ containing a value of this type.
         public static final int abs__textfield_searchview_holo_light=0x7f02006c;
         public static final int abs__textfield_searchview_right_holo_dark=0x7f02006d;
         public static final int abs__textfield_searchview_right_holo_light=0x7f02006e;
-        public static final int ic_menu_about=0x7f02006f;
-        public static final int ic_menu_exit=0x7f020070;
-        public static final int ic_menu_info=0x7f020071;
+        public static final int ic_menu_close_clear_cancel=0x7f02006f;
+        public static final int ic_menu_friendslist=0x7f020070;
+        public static final int ic_menu_info_details=0x7f020071;
         public static final int icon=0x7f020072;
         public static final int logo_empresa=0x7f020073;
         public static final int next_month=0x7f020074;
@@ -1447,7 +1447,6 @@ containing a value of this type.
         public static final int week_start_day_preferences=0x7f060038;
     }
     public static final class style {
-        public static final int CenteredDialog=0x7f070060;
         public static final int DialogWindowTitle_Sherlock=0x7f07003c;
         public static final int DialogWindowTitle_Sherlock_Light=0x7f07003d;
         public static final int NoTitleDialog=0x7f07005f;
@@ -1550,25 +1549,6 @@ containing a value of this type.
         public static final int preferences=0x7f050001;
     }
     public static final class styleable {
-        /** Attributes that can be used with a HelloGallery.
-           <p>Includes the following attributes:</p>
-           <table>
-           <colgroup align="left" />
-           <colgroup align="left" />
-           <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #HelloGallery_android_galleryItemBackground com.jsolutionssp.pill:android_galleryItemBackground}</code></td><td></td></tr>
-           </table>
-           @see #HelloGallery_android_galleryItemBackground
-         */
-        public static final int[] HelloGallery = {
-            0x0101004c
-        };
-        /**
-          <p>This symbol is the offset where the {@link com.jsolutionssp.pill.R.attr#android_galleryItemBackground}
-          attribute's value can be found in the {@link #HelloGallery} array.
-          @attr name android:android_galleryItemBackground
-        */
-        public static final int HelloGallery_android_galleryItemBackground = 0;
         /**  Attributes used to style the Action Bar. 
            <p>Includes the following attributes:</p>
            <table>

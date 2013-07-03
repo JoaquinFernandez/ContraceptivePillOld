@@ -399,9 +399,9 @@ int drawable abs__textfield_searchview_holo_dark 0x7f02006b
 int drawable abs__textfield_searchview_holo_light 0x7f02006c
 int drawable abs__textfield_searchview_right_holo_dark 0x7f02006d
 int drawable abs__textfield_searchview_right_holo_light 0x7f02006e
-int drawable ic_menu_about 0x7f02006f
-int drawable ic_menu_exit 0x7f020070
-int drawable ic_menu_info 0x7f020071
+int drawable ic_menu_close_clear_cancel 0x7f02006f
+int drawable ic_menu_friendslist 0x7f020070
+int drawable ic_menu_info_details 0x7f020071
 int drawable icon 0x7f020072
 int drawable logo_empresa 0x7f020073
 int drawable next_month 0x7f020074
@@ -673,7 +673,6 @@ int string sound_preferences 0x7f06003e
 int string start_pack_date_preferences 0x7f060039
 int string vibration_preferences 0x7f06003f
 int string week_start_day_preferences 0x7f060038
-int style CenteredDialog 0x7f070060
 int style DialogWindowTitle_Sherlock 0x7f07003c
 int style DialogWindowTitle_Sherlock_Light 0x7f07003d
 int style NoTitleDialog 0x7f07005f
@@ -770,8 +769,6 @@ int style Widget_Sherlock_ProgressBar_Horizontal 0x7f070036
 int style Widget_Sherlock_SearchAutoCompleteTextView 0x7f07003a
 int style Widget_Sherlock_Spinner_DropDown_ActionBar 0x7f07002a
 int style Widget_Sherlock_TextView_SpinnerItem 0x7f070038
-int[] styleable HelloGallery { 0x0101004c }
-int styleable HelloGallery_android_galleryItemBackground 0
 int[] styleable SherlockActionBar { 0x7f010009, 0x7f01000a, 0x7f01000b, 0x7f01000c, 0x7f01000d, 0x7f01000e, 0x7f010051, 0x7f010052, 0x7f010053, 0x7f010054, 0x7f010055, 0x7f010056, 0x7f010057, 0x7f010058, 0x7f010059, 0x7f01005a, 0x7f01005b, 0x7f01005c, 0x7f01005d }
 int styleable SherlockActionBar_background 2
 int styleable SherlockActionBar_backgroundSplit 3

@@ -3,6 +3,7 @@ package com.jsolutionssp.pill.preference;
 import java.text.DateFormat;
 import java.util.Date;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -13,7 +14,6 @@ import android.preference.Preference;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
-import android.widget.Toast;
 
 import com.jsolutionssp.pill.R;
 import com.jsolutionssp.pill.db.DayStorageDB;
@@ -38,27 +38,29 @@ public class PreferencesFragmentV11 extends PreferenceFragment implements OnShar
 
 	private void preferenceTour(int intructions) {
 		int id;
+		String title;
 		switch (intructions) {
 		case 0 :
+			title = "Pill type";
 			id = R.string.preferences_instructions_first;
 			break;
 		case 1 :
+			title = "Start pack date";
 			id = R.string.preferences_instructions_second;
 			break;
 		case 2 :
+			title = "Week Day";
 			id = R.string.preferences_instructions_third;
 			break;
 		default :
+			title = "Alarms";
 			id = R.string.preferences_instructions_fourth;
 			PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext()).edit()
 			.putBoolean("first_time_used_preference", false).commit();
 			break;
 		}
 		String text = getResources().getString(id);
-		Toast t = Toast.makeText(getActivity().getApplicationContext(), 
-				text, Toast.LENGTH_LONG);
-		t.show();
-		t.show();
+		new AlertDialog.Builder(getActivity()).setTitle(title).setMessage(text).setIcon(R.drawable.ic_menu_info_details).setNeutralButton("Close", null).show();
 	}
 
 	@Override

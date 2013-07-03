@@ -18,9 +18,12 @@ public class TransferPreferences {
 		//Transfer pill type
 		int pillTakingDays = oldPrefs.getInt("pillTakingDays", -1);//how many days is taking pills
 		int pillRestDays = oldPrefs.getInt("pillRestDays", -1);//How many days is rest
-		if (pillTakingDays != -1 && pillRestDays != -1)
+		if (pillTakingDays != -1 && pillRestDays != -1) {
 			newEditor.putString("pill_type", pillTakingDays + "/" + "0/" + pillRestDays);//Format is NumberTakingDays/NumberPlaceboDays/NumberOfRestDays
-
+			// if there was a pill time, is not the first time they use the application so they don't need the
+			//tour about the preferences
+			newEditor.putBoolean("first_time_used_preference", false);
+		}
 		//Transfer start week day
 		boolean whichDayStartsWeek = oldPrefs.getBoolean("firstDayofWeek", true);//True = Monday, false,Sunday
 		if (whichDayStartsWeek)

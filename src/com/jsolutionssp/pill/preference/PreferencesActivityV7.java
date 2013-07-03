@@ -3,6 +3,7 @@ package com.jsolutionssp.pill.preference;
 import java.text.DateFormat;
 import java.util.Date;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
@@ -11,7 +12,6 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceManager;
-import android.widget.Toast;
 
 import com.actionbarsherlock.app.SherlockPreferenceActivity;
 import com.actionbarsherlock.view.MenuItem;
@@ -45,27 +45,29 @@ public class PreferencesActivityV7 extends SherlockPreferenceActivity implements
 	
 	private void preferenceTour(int intructions) {
 		int id;
+		String title;
 		switch (intructions) {
 		case 0 :
+			title = "Pill type";
 			id = R.string.preferences_instructions_first;
 			break;
 		case 1 :
+			title = "Start pack date";
 			id = R.string.preferences_instructions_second;
 			break;
 		case 2 :
+			title = "Week Day";
 			id = R.string.preferences_instructions_third;
 			break;
 		default :
+			title = "Alarms";
 			id = R.string.preferences_instructions_fourth;
-			PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit()
+			PreferenceManager.getDefaultSharedPreferences(this).edit()
 			.putBoolean("first_time_used_preference", false).commit();
 			break;
 		}
 		String text = getResources().getString(id);
-		Toast t = Toast.makeText(getApplicationContext(), 
-				text, Toast.LENGTH_LONG);
-		t.show();
-		t.show();
+		new AlertDialog.Builder(this).setTitle(title).setMessage(text).setIcon(R.drawable.ic_menu_info_details).setNeutralButton("Close", null).show();
 	}
 
 	@Override

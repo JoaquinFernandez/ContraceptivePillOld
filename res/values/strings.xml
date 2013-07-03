@@ -80,13 +80,14 @@
     <string name="button_calificate">Rate!</string>
     <string name="calendar_instructions"> \n Here you have the calendar, you can navigate through
         months and, when clicking on a day you can write a note for that day, or change what happened
-        with the pill that day (you forgot to take it, you took it too late, etc.)</string>
+        with the pill that day (you forgot to take it, you took it too late, etc.)\nYou can take
+        a look at the pill color code by clicking on the info button (up-right)</string>
     <string name="preferences_instructions_first"> Please select your type of pill, clicking
         on contraceptive pill type</string>
     <string name="preferences_instructions_second"> Now please, select the day you started 
             the last pill pack, clicking on pack start date</string>
-    <string name="preferences_instructions_third"> Now please, choose which day do you want to show the calendar 
-            \n Monday (European) \n Sunday (American)</string>
+    <string name="preferences_instructions_third"> Now please, choose which day do you want the week to 
+        start in the calendar \n Monday (European) \n Sunday (American)</string>
     <string name="preferences_instructions_fourth"> Now you can set the alarms for noticing you when to take the pill
             or buy the next pill pack</string>
     <string name="day_touched_text">Are you sure you want to change the pill taking cycle starting day?</string>

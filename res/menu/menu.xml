@@ -3,19 +3,19 @@
 
     <item
         android:id="@+id/MnuOpt1"
-        android:icon="@drawable/ic_menu_about"
+        android:icon="@drawable/ic_menu_friendslist"
         android:title="@string/menu_about"
         android:showAsAction="ifRoom|withText">
     </item>
     <item
         android:id="@+id/MnuOpt2"
-        android:icon="@drawable/ic_menu_info"
+        android:icon="@drawable/ic_menu_info_details"
         android:title="@string/menu_info"
         android:showAsAction="ifRoom|withText">
     </item>
     <item
         android:id="@+id/MnuOpt3"
-        android:icon="@drawable/ic_menu_exit"
+        android:icon="@drawable/ic_menu_close_clear_cancel"
         android:title="@string/menu_exit"
         android:showAsAction="ifRoom|withText">
     </item>
