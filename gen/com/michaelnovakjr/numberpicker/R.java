@@ -8,11 +8,11 @@ package com.michaelnovakjr.numberpicker;
 
 public final class R {
 	public static final class id {
-		public static final int increment = 0x7f080055;
-		public static final int num_picker = 0x7f080046;
-		public static final int pref_num_picker = 0x7f080058;
-		public static final int numpicker_input = 0x7f080056;
-		public static final int decrement = 0x7f080057;
+		public static final int increment = 0x7f080054;
+		public static final int num_picker = 0x7f080047;
+		public static final int pref_num_picker = 0x7f080057;
+		public static final int numpicker_input = 0x7f080055;
+		public static final int decrement = 0x7f080056;
 	}
 	public static final class style {
 		public static final int NumberPickerInputText = 0x7f070000;
@@ -30,7 +30,7 @@ public final class R {
 	public static final class layout {
 		public static final int pref_number_picker = 0x7f030024;
 		public static final int number_picker = 0x7f030022;
-		public static final int dialog_number_picker = 0x7f03001c;
+		public static final int dialog_number_picker = 0x7f03001d;
 	}
 	public static final class styleable {
 		public static final int numberpicker_startRange = 0;

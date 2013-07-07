@@ -135,19 +135,19 @@ public class DayStorageDB extends SQLiteOpenHelper {
 	 */
 	public String getPillType(String year, String dayOfYear) {
 		SQLiteDatabase db = getWritableDatabase();
-		if (isDatabaseValid(db, year, dayOfYear)) {
-			Cursor c = db.rawQuery(" SELECT " + TABLE_COLUMN_PILL_TYPE + " FROM " + TABLE_NAME +
-					" WHERE " + TABLE_COLUMN_YEAR + "=" + year + " AND " + TABLE_COLUMN_DAY_OF_YEAR + "=" + dayOfYear + " ", null);
-			if  (c.moveToFirst()) {
-				String pillType = c.getString(c.getColumnIndex(TABLE_COLUMN_PILL_TYPE));
-				c.close();
-				db.close();
-				if (pillType.equalsIgnoreCase("-1"))
-					return null;
-				return pillType;
-			}
+		Cursor c = db.rawQuery(" SELECT " + TABLE_COLUMN_PILL_TYPE + " FROM " + TABLE_NAME +
+				" WHERE " + TABLE_COLUMN_YEAR + "=" + year + " AND " + TABLE_COLUMN_DAY_OF_YEAR + "=" + dayOfYear
+				+ " AND " + TABLE_COLUMN_VALID	+ "=" + VALID + " ", null);
+		if  (c.moveToFirst()) {
+			String pillType = c.getString(c.getColumnIndex(TABLE_COLUMN_PILL_TYPE));
 			c.close();
+			db.close();
+			if (pillType.equalsIgnoreCase("-1"))
+				return null;
+			return pillType;
 		}
+		c.close();
+
 		db.close();
 		return null;
 	}
@@ -174,29 +174,6 @@ public class DayStorageDB extends SQLiteOpenHelper {
 		c.close();
 		db.close();
 		return "";
-	}
-
-	/**
-	 * It checks if the database is valid (there has been no changes in the start
-	 * day of the pack or the pill modality)
-	 * 
-	 * @param db the database we want to check
-	 * @param year the year of the day we want to check if the information is valid
-	 * @param dayOfYear the day of the year we want to check if the information is valid
-	 * @return
-	 */
-	public boolean isDatabaseValid(SQLiteDatabase db, String year, String dayOfYear) {
-		Cursor c = db.rawQuery(" SELECT " + TABLE_COLUMN_VALID + " FROM " + TABLE_NAME +
-				" WHERE " + TABLE_COLUMN_YEAR + "=" + year + " AND " + TABLE_COLUMN_DAY_OF_YEAR + "=" + dayOfYear + " ", null);
-		if  (c.moveToFirst()) {
-			int isValid = c.getInt(c.getColumnIndex(TABLE_COLUMN_VALID));
-			c.close();
-			if (isValid == VALID)
-				return true;
-			return false;
-		}
-		c.close();
-		return false;
 	}
 
 	/**

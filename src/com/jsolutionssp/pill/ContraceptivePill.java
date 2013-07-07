@@ -4,9 +4,9 @@ package com.jsolutionssp.pill;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.SharedPreferences;
-import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -17,13 +17,10 @@ import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 import com.google.analytics.tracking.android.EasyTracker;
-import com.jsolutionssp.pill.calendar.CalendarFragmentV11;
-import com.jsolutionssp.pill.calendar.CalendarFragmentV7;
-import com.jsolutionssp.pill.calendar.CalendarTabListenerV11;
-import com.jsolutionssp.pill.calendar.CalendarTabListenerV7;
+import com.jsolutionssp.pill.adapter.CalendarPagerAdapter;
+import com.jsolutionssp.pill.calendar.CalendarFragment;
+import com.jsolutionssp.pill.calendar.CalendarTabListener;
 import com.jsolutionssp.pill.gui.AboutDialog;
-import com.jsolutionssp.pill.preference.PreferencesFragmentV11;
-import com.jsolutionssp.pill.preference.PreferencesTabListenerV11;
 import com.jsolutionssp.pill.preference.PreferencesTabListenerV7;
 import com.jsolutionssp.pill.preference.TransferPreferences;
 
@@ -45,62 +42,38 @@ public class ContraceptivePill extends SherlockFragmentActivity {
 		SharedPreferences oldPrefs = getSharedPreferences("com.jsolutionssp.pill", 0);
 		if (oldPrefs.getInt("pillTakingDays", 0) != 0)
 			TransferPreferences.TransferOldPreferences(this);
-		//Check what version are we running under
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-			//Get a reference of the action bar
-			android.app.ActionBar actionBar = getActionBar();
-			actionBar.setDisplayShowTitleEnabled(false);
-			//Set the navigation mode to tabs
-			actionBar.setNavigationMode(
-					ActionBar.NAVIGATION_MODE_TABS);
+		//Get a reference of the action bar
+		ActionBar actionBar = getSupportActionBar();
+		actionBar.setDisplayShowTitleEnabled(false);
+		//Set the navigation mode to tabs
+		actionBar.setNavigationMode( 
+				ActionBar.NAVIGATION_MODE_TABS);
 
-			//Create tabs and add listeners
-			android.app.ActionBar.Tab tab1 = actionBar.newTab().setText(R.string.calendar_tab_name);
-			android.app.ActionBar.Tab tab2 = actionBar.newTab().setText(R.string.preferences_tab_name);
+		//Create tabs and add listeners
+		ActionBar.Tab tab1 = actionBar.newTab().setText(R.string.calendar_tab_name);
+		ActionBar.Tab tab2 = actionBar.newTab().setText(R.string.preferences_tab_name);
 
-			tab1.setTabListener(new CalendarTabListenerV11<CalendarFragmentV11>(this, "CalendarFragmentV11", CalendarFragmentV11.class));
-			tab2.setTabListener(new PreferencesTabListenerV11<PreferencesFragmentV11>(this, "PreferencesFragmentV11", PreferencesFragmentV11.class));
+		tab1.setTabListener(new CalendarTabListener<CalendarFragment>());
+		tab2.setTabListener(new PreferencesTabListenerV7(this));
 
-			//Add tabs to action bar
-			actionBar.addTab(tab1);
-			actionBar.addTab(tab2);
-			
-			if (isFirstPreferenceTime())
-				tab2.select();
-			else if (isFirstCalendarTime()) {
-				String text = getResources().getString(R.string.calendar_instructions);
-				new AlertDialog.Builder(this).setTitle(getResources().getString(R.string.calendar_info)).setMessage(text).setIcon(R.drawable.ic_menu_info_details).setNeutralButton("Close", null).show();
-			}
-		}
-		else {
-			//Get a reference of the action bar
-			ActionBar actionBar = getSupportActionBar();
-			actionBar.setDisplayShowTitleEnabled(false);
-			//Set the navigation mode to tabs
-			actionBar.setNavigationMode( 
-					ActionBar.NAVIGATION_MODE_TABS);
+		//Add tabs to action bar
+		actionBar.addTab(tab1);
+		actionBar.addTab(tab2);
 
-			//Create tabs and add listeners
-			ActionBar.Tab tab1 = actionBar.newTab().setText(R.string.calendar_tab_name);
-			ActionBar.Tab tab2 = actionBar.newTab().setText(R.string.preferences_tab_name);
-
-			tab1.setTabListener(new CalendarTabListenerV7<CalendarFragmentV7>(this, "CalendarFragmentV7", CalendarFragmentV7.class));
-			tab2.setTabListener(new PreferencesTabListenerV7(this));
-
-			//Add tabs to action bar
-			actionBar.addTab(tab1);
-			actionBar.addTab(tab2);
-			
-			if (isFirstPreferenceTime())
-				tab2.select();
-			else if (isFirstCalendarTime()) {
-				String text = getResources().getString(R.string.calendar_instructions);
-				new AlertDialog.Builder(this).setTitle(getResources().getString(R.string.calendar_info))
-				.setMessage(text).setIcon(R.drawable.ic_menu_info_details)
-				.setNeutralButton("Close", null).show();
-			}
+		if (isFirstPreferenceTime())
+			tab2.select();
+		else if (isFirstCalendarTime()) {
+			String text = getResources().getString(R.string.calendar_instructions);
+			new AlertDialog.Builder(this).setTitle(getResources().getString(R.string.calendar_info))
+			.setMessage(text).setIcon(R.drawable.ic_menu_info_details)
+			.setNeutralButton("Close", null).show();
 		}
 		setContentView(R.layout.main);
+		ViewPager pager = (ViewPager) findViewById(R.id.pager);
+		CalendarPagerAdapter  pagerAdapter = new CalendarPagerAdapter(getSupportFragmentManager());
+		pager.setAdapter(pagerAdapter);
+		pager.setCurrentItem(CalendarPagerAdapter.MAX_VIEWS/2);//Sets the visible item to the half
+
 	}
 
 	private boolean isFirstCalendarTime() {

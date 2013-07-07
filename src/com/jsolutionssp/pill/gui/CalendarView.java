@@ -1,20 +1,13 @@
 
 package com.jsolutionssp.pill.gui;
 
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-
 import android.content.Context;
-import android.util.AttributeSet;
 import android.view.LayoutInflater;
-import android.view.View;
-import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.jsolutionssp.pill.ContraceptivePill;
 import com.jsolutionssp.pill.R;
 import com.jsolutionssp.pill.adapter.GridCalendarAdapter;
 import com.jsolutionssp.pill.adapter.GridWeekDayAdapter;
@@ -49,8 +42,8 @@ public class CalendarView extends LinearLayout {
 	 * @param context the context of the activity that created this layout
 	 * @param attrs attributes
 	 */
-	public CalendarView(Context context, AttributeSet attrs) {
-		super(context, attrs);
+	public CalendarView(Context context, int month, int year) {
+		super(context);
 		//Inflate the layout
 		LayoutInflater layoutInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		calendarLayout = (LinearLayout) layoutInflater.inflate(R.layout.calendar, this);
@@ -60,61 +53,11 @@ public class CalendarView extends LinearLayout {
 		//Initialize parameters
 		this.context = context;
 		months = getResources().getStringArray(R.array.months);
-		GregorianCalendar calendar = new GregorianCalendar();
-		month = calendar.get(Calendar.MONTH);
-		year = calendar.get(Calendar.YEAR);
+		this.month = month;
+		this.year = year;
 		//Auxiliary functions
 		fillGrid();
 		setMonth();
-		setListeners();
-	}
-	
-	/**
-	 * Auxiliary function that sets the listeners for the next month and previous month buttons 
-	 * checking if it is the first month (0) or the last month of the year (11) and if so, updating
-	 * the year as well as the month
-	 */
-	private void setListeners() {
-		nextMonth.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				setNextMonth();
-			}
-
-		});
-		prevMonth.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				setPreviousMonth();
-			}
-		});
-	}
-
-	protected void setPreviousMonth() {
-		prevMonth.setAnimation(AnimationUtils.loadAnimation(context, R.anim.left_arrow));
-		if (month == 0) {
-			month = ContraceptivePill.months;
-			year--;
-		}
-		else
-			month--;
-		fillGrid();
-		setMonth();		
-	}
-
-	protected void setNextMonth() {
-		nextMonth.setAnimation(AnimationUtils.loadAnimation(context, R.anim.right_arrow));
-		if (month == 11) {
-			month = 0;
-			year++;
-		}
-		else
-			month++;
-		fillGrid();
-		setMonth();		
-		
 	}
 
 	/**
