@@ -48,19 +48,19 @@ public class PreferencesActivityV7 extends SherlockPreferenceActivity implements
 		String title;
 		switch (intructions) {
 		case 0 :
-			title = "Pill type";
+			title = getResources().getString(R.string.contraceptive_pill_type_preferences);
 			id = R.string.preferences_instructions_first;
 			break;
 		case 1 :
-			title = "Start pack date";
+			title = getResources().getString(R.string.start_pack_date_preferences);
 			id = R.string.preferences_instructions_second;
 			break;
 		case 2 :
-			title = "Week Day";
+			title = getResources().getString(R.string.week_start_day_preferences);
 			id = R.string.preferences_instructions_third;
 			break;
 		default :
-			title = "Alarms";
+			title = getResources().getString(R.string.preferences_alarms_separator);
 			id = R.string.preferences_instructions_fourth;
 			PreferenceManager.getDefaultSharedPreferences(this).edit()
 			.putBoolean("first_time_used_preference", false).commit();

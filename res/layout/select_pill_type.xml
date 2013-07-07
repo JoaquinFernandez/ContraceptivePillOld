@@ -2,14 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="vertical" 
-    android:background="@color/Gray">
+    android:orientation="vertical" >
 
     <RelativeLayout
         android:id="@+id/select_pill_type_pill_not_taken_layout"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:clickable="true"
         android:orientation="horizontal" >
 
         <ImageView
@@ -23,9 +23,9 @@
             android:id="@+id/select_pill_type_pill_not_taken_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/select_pill_type_pill_not_taken_image"
-            android:layout_marginLeft="20dp"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/select_pill_type_pill_not_taken_image"
             android:text="@string/pill_not_taken"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textIsSelectable="true" />
@@ -33,9 +33,10 @@
 
     <RelativeLayout
         android:id="@+id/select_pill_type_pill_taken_layout"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:clickable="true"
         android:orientation="horizontal" >
 
         <ImageView
@@ -49,9 +50,9 @@
             android:id="@+id/select_pill_type_pill_taken_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/select_pill_type_pill_taken_image"
-            android:layout_marginLeft="20dp"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/select_pill_type_pill_taken_image"
             android:text="@string/pill_taken"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textIsSelectable="true" />
@@ -59,9 +60,10 @@
 
     <RelativeLayout
         android:id="@+id/select_pill_type_pill_taken_late_layout"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:clickable="true"
         android:orientation="horizontal" >
 
         <ImageView
@@ -75,9 +77,9 @@
             android:id="@+id/select_pill_type_pill_taken_late_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/select_pill_type_pill_taken_late_image"
-            android:layout_marginLeft="20dp"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/select_pill_type_pill_taken_late_image"
             android:text="@string/pill_taken_late"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textIsSelectable="true" />
@@ -85,9 +87,10 @@
 
     <RelativeLayout
         android:id="@+id/select_pill_type_pill_pending_layout"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:clickable="true"
         android:orientation="horizontal" >
 
         <ImageView
@@ -101,19 +104,20 @@
             android:id="@+id/select_pill_type_pill_pending_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/select_pill_type_pill_pending_image"
-            android:layout_marginLeft="20dp"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/select_pill_type_pill_pending_image"
             android:text="@string/pill_pending"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textIsSelectable="true" />
     </RelativeLayout>
-    
-     <RelativeLayout
+
+    <RelativeLayout
         android:id="@+id/select_pill_type_pill_rest_day_layout"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:clickable="true"
         android:orientation="horizontal" >
 
         <ImageView
@@ -127,19 +131,20 @@
             android:id="@+id/select_pill_type_pill_rest_day_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/select_pill_type_pill_rest_day_image"
-            android:layout_marginLeft="20dp"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/select_pill_type_pill_rest_day_image"
             android:text="@string/pill_rest_day"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textIsSelectable="true" />
     </RelativeLayout>
-    
-      <RelativeLayout
+
+    <RelativeLayout
         android:id="@+id/select_pill_type_pill_placebo_layout"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:clickable="true"
         android:orientation="horizontal" >
 
         <ImageView
@@ -153,19 +158,29 @@
             android:id="@+id/select_pill_type_pill_placebo_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/select_pill_type_pill_placebo_image"
-            android:layout_marginLeft="20dp"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/select_pill_type_pill_placebo_image"
             android:text="@string/pill_placebo"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textIsSelectable="true" />
     </RelativeLayout>
 
-    <Button
-        android:id="@+id/select_pill_type_button"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/button_cancel" />
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="1.0" >
+
+        <Button
+            android:id="@+id/select_pill_type_button"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight=".6"
+            android:text="@string/button_cancel" />
+    </LinearLayout>
 
 </LinearLayout>

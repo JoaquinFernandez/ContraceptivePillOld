@@ -19,7 +19,6 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:selectable="true"
-        android:text="@string/day_touched_text"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </RelativeLayout>

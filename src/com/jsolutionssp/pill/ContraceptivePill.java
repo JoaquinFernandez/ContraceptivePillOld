@@ -68,7 +68,7 @@ public class ContraceptivePill extends SherlockFragmentActivity {
 				tab2.select();
 			else if (isFirstCalendarTime()) {
 				String text = getResources().getString(R.string.calendar_instructions);
-				new AlertDialog.Builder(this).setTitle("Calendar info").setMessage(text).setIcon(R.drawable.ic_menu_info_details).setNeutralButton("Close", null).show();
+				new AlertDialog.Builder(this).setTitle(getResources().getString(R.string.calendar_info)).setMessage(text).setIcon(R.drawable.ic_menu_info_details).setNeutralButton("Close", null).show();
 			}
 		}
 		else {
@@ -93,7 +93,9 @@ public class ContraceptivePill extends SherlockFragmentActivity {
 				tab2.select();
 			else if (isFirstCalendarTime()) {
 				String text = getResources().getString(R.string.calendar_instructions);
-				new AlertDialog.Builder(this).setTitle("Calendar info").setMessage(text).setIcon(R.drawable.ic_menu_info_details).setNeutralButton("Close", null).show();
+				new AlertDialog.Builder(this).setTitle(getResources().getString(R.string.calendar_info))
+				.setMessage(text).setIcon(R.drawable.ic_menu_info_details)
+				.setNeutralButton("Close", null).show();
 			}
 		}
 		setContentView(R.layout.main);
@@ -103,7 +105,7 @@ public class ContraceptivePill extends SherlockFragmentActivity {
 		SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
 		if (settings.getBoolean("first_time_used_calendar", true)) {
 			PreferenceManager.getDefaultSharedPreferences(this).edit()
-			.putBoolean("first_time_used_preference", false).commit();
+			.putBoolean("first_time_used_calendar", false).commit();
 			return true;
 		}
 		return false;
@@ -154,7 +156,7 @@ public class ContraceptivePill extends SherlockFragmentActivity {
 			final Dialog changePillType = new Dialog(this, R.style.NoTitleDialog);
 			changePillType.setContentView(R.layout.select_pill_type);
 			Button button = (Button) changePillType.findViewById(R.id.select_pill_type_button);
-			button.setText("Close");
+			button.setText(getResources().getString(R.string.button_close));
 			//Dismiss button
 			button.setOnClickListener(new OnClickListener() {
 

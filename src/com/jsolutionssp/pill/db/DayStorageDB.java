@@ -66,11 +66,11 @@ public class DayStorageDB extends SQLiteOpenHelper {
 		 * String upgradeQuery = "ALTER TABLE " + TABLE_NAME + "ADD COLUMN " + TABLE_COLUMN_VALID + " INTEGER;";
 		 * if (oldVersion == 1 && newVersion == 2)
 		 * db.execSQL(upgradeQuery);
-		*/
+		 */
 	}
 
 	/**
-	 * Method to store the pill type of a day
+	 * Method to store the pill type of a day, if the row already existed, it updates it
 	 * @param year the year of the day we want to store info about
 	 * @param dayOfYear the day of the year we want to store info about
 	 * @param pillType the pill type we want to store
@@ -78,12 +78,22 @@ public class DayStorageDB extends SQLiteOpenHelper {
 	public void setPillType(String year, String dayOfYear, String pillType) {
 		SQLiteDatabase db = getWritableDatabase();
 
-		db.execSQL("INSERT INTO " + TABLE_NAME + " (" + TABLE_COLUMN_YEAR
-				+ ", " + TABLE_COLUMN_VALID
-				+ ", " + TABLE_COLUMN_DAY_OF_YEAR + ", "
-				+ TABLE_COLUMN_PILL_TYPE + ") VALUES (" + year + ", "
-				+ VALID + ", " + dayOfYear + ", " + pillType + ") ");
-		
+		Cursor c = db.rawQuery(" SELECT " + TABLE_COLUMN_PILL_TYPE + " FROM " + TABLE_NAME +
+				" WHERE " + TABLE_COLUMN_YEAR + "=" + year + " AND " + TABLE_COLUMN_DAY_OF_YEAR + "=" + dayOfYear + " ", null);
+		if  (c.moveToFirst()) {//the row existed
+			db.execSQL("UPDATE " + TABLE_NAME + " SET " + TABLE_COLUMN_PILL_TYPE
+					+ "=" + pillType + ", " + TABLE_COLUMN_VALID + "=" + VALID 
+					+ " WHERE " + TABLE_COLUMN_YEAR + "=" + year
+					+ " AND " + TABLE_COLUMN_DAY_OF_YEAR + "=" + dayOfYear + " ");
+		}
+		else {
+			db.execSQL("INSERT INTO " + TABLE_NAME + " (" + TABLE_COLUMN_YEAR
+					+ ", " + TABLE_COLUMN_VALID
+					+ ", " + TABLE_COLUMN_DAY_OF_YEAR + ", "
+					+ TABLE_COLUMN_PILL_TYPE + ") VALUES (" + year + ", "
+					+ VALID + ", " + dayOfYear + ", " + pillType + ") ");
+		}
+		c.close();
 		db.close();
 	}
 
@@ -100,23 +110,6 @@ public class DayStorageDB extends SQLiteOpenHelper {
 		db.execSQL("UPDATE " + TABLE_NAME + " SET " + TABLE_COLUMN_NOTE + "='"
 				+ note + "' WHERE " + TABLE_COLUMN_YEAR + "=" + year + " AND "
 				+ TABLE_COLUMN_DAY_OF_YEAR + "=" + dayOfYear + " ");
-		db.close();
-	}
-
-	/**
-	 * Updates the given row with the pill type specified (it is necessary that it have been
-	 * created before with insertPillTYpe() 
-	 * 
-	 * @param year year of the day we want to update
-	 * @param dayOfYear day of the year we want to update
-	 * @param pillType the type of pill we want to use
-	 */
-	public void updatePillType(String year, String dayOfYear, String pillType) {
-		SQLiteDatabase db = getWritableDatabase();
-		db.execSQL("UPDATE " + TABLE_NAME + " SET " + TABLE_COLUMN_PILL_TYPE
-				+ "=" + pillType + ", " + TABLE_COLUMN_VALID + "=" + VALID 
-				+ " WHERE " + TABLE_COLUMN_YEAR + "=" + year
-				+ " AND " + TABLE_COLUMN_DAY_OF_YEAR + "=" + dayOfYear + " ");
 		db.close();
 	}
 
@@ -155,8 +148,6 @@ public class DayStorageDB extends SQLiteOpenHelper {
 			}
 			c.close();
 		}
-		else
-			return "-1";
 		db.close();
 		return null;
 	}

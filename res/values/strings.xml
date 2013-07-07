@@ -66,8 +66,7 @@
     <string name="button_ok">OK</string>
     <string name="button_save">Save</string>
     <string name="button_cancel">Cancel</string>
-    <string name="button_clear">Clear</string>
-    <string name="button_change">Change</string>
+    <string name="button_close">Close</string>
     <string name="menu_about">About</string>
     <string name="menu_exit">Exit</string>
     <string name="menu_info">Info</string>
@@ -78,6 +77,7 @@
     <string name="notification_bar_cycle_text3">Your pill cycle starts today!</string>
     <string name="notification_bar_cycle_text4">Your pill cycle starts tomorrow!</string>
     <string name="button_calificate">Rate!</string>
+    <string name="calendar_info">Calendar info</string>
     <string name="calendar_instructions"> \n Here you have the calendar, you can navigate through
         months and, when clicking on a day you can write a note for that day, or change what happened
         with the pill that day (you forgot to take it, you took it too late, etc.)\nYou can take
@@ -90,7 +90,6 @@
         start in the calendar \n Monday (European) \n Sunday (American)</string>
     <string name="preferences_instructions_fourth"> Now you can set the alarms for noticing you when to take the pill
             or buy the next pill pack</string>
-    <string name="day_touched_text">Are you sure you want to change the pill taking cycle starting day?</string>
     <string name="contraceptive_pill_type_preferences"><item>Contraceptive pill type</item></string>
     <string name="week_start_day_preferences">Week start day</string>
     <string name="start_pack_date_preferences">Pack start date</string>
@@ -101,5 +100,6 @@
     <string name="sound_preferences">Sound</string>
     <string name="vibration_preferences">Vibrate</string>
     <string name="ringtone_preferences">Ringtone</string>
+    <string name="note_saved_text">Note Saved</string>
 
 </resources>

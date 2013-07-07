@@ -43,10 +43,7 @@ public class PillDayInfo {
 	public int getPillType(GregorianCalendar cellCalendar, int dayOfYear, int year) {
 		DayStorageDB db = new DayStorageDB(context);
 		String pillType = db.getPillType(String.valueOf(year), String.valueOf(dayOfYear));
-		boolean existedInDB = false;
-		if (pillType.equalsIgnoreCase("-1"))
-			existedInDB = true;
-		else if (pillType != null) {
+		if (pillType != null) {
 			db.close();
 			return Integer.valueOf(pillType);
 		}
@@ -60,10 +57,7 @@ public class PillDayInfo {
 		int calculatedPillType = getPillType(differenceOfDays);
 		int finalPillType = checkPastDay(cellCalendar, calculatedPillType);
 		//Now I have to store the information in the database
-		if (existedInDB)
-			db.updatePillType(String.valueOf(year), String.valueOf(dayOfYear), String.valueOf(finalPillType));
-		else
-			db.setPillType(String.valueOf(year), String.valueOf(dayOfYear), String.valueOf(finalPillType));
+		db.setPillType(String.valueOf(year), String.valueOf(dayOfYear), String.valueOf(finalPillType));
 		db.close();
 		return finalPillType;
 	}

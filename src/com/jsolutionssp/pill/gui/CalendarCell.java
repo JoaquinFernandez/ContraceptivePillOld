@@ -3,12 +3,15 @@ package com.jsolutionssp.pill.gui;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.text.Editable;
+import android.view.Display;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
@@ -53,6 +56,9 @@ public class CalendarCell extends RelativeLayout {
 
 	/** The button with the image representing the pill type as background */
 	private ImageButton imageButton;
+	
+	/** Variable to store temporarily the old pill type the user has selected */
+	private int oldPillType;
 
 	/**
 	 * Constructor that initializes all the data necessary for this cell to be showed in the screen
@@ -65,7 +71,7 @@ public class CalendarCell extends RelativeLayout {
 	public CalendarCell(Context context, int i, int firstRepresentingDay, int representingYear, int representingMonth) {
 		super(context);
 		this.context = context;
-		
+
 		LayoutInflater layoutInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		CalendarCell calendarCell = (CalendarCell) layoutInflater.inflate(R.layout.calendar_cell, this);
 		RelativeLayout layout = (RelativeLayout) calendarCell.getChildAt(0);
@@ -75,7 +81,7 @@ public class CalendarCell extends RelativeLayout {
 
 		//The day we're representing in Day of the year
 		cellDayOfYear = i + firstRepresentingDay;
-		
+
 		//we update our calendar
 		GregorianCalendar calendar = new GregorianCalendar();
 		calendar.set(Calendar.DAY_OF_YEAR, cellDayOfYear);
@@ -140,7 +146,7 @@ public class CalendarCell extends RelativeLayout {
 			return R.drawable.pill_rest_day;
 		}
 	}
-	
+
 	/**
 	 * Auxiliary method that checks the pill type this cell has
 	 * @return the String that represents the pill type of this cell
@@ -243,6 +249,9 @@ public class CalendarCell extends RelativeLayout {
 			//The dialog that is going to be shown 
 			final Dialog dayTouchedDialog = new Dialog(context, R.style.NoTitleDialog);
 			dayTouchedDialog.setContentView(R.layout.day_touched_dialog);
+			Display display = ((WindowManager) context.getSystemService(Activity.WINDOW_SERVICE)).getDefaultDisplay();
+			int width = display.getWidth();
+			dayTouchedDialog.getWindow().setLayout(width, android.view.WindowManager.LayoutParams.WRAP_CONTENT);
 			//Image view that is going to show the image of the pill type this cell has
 			ImageView imageView = (ImageView) dayTouchedDialog.findViewById(R.id.day_touched_pill_image);
 			imageView.setBackgroundResource(getDrawable());
@@ -250,34 +259,36 @@ public class CalendarCell extends RelativeLayout {
 			TextView pillTextView = (TextView) dayTouchedDialog.findViewById(R.id.day_touched_pill_text);
 			pillTextView.setText(getPillTypeText());
 			//Change button, shows a new dialog with a list of the pill types so the user can change it
-			Button changeButton = (Button) dayTouchedDialog.findViewById(R.id.day_touched_pill_button);
-			changeButton.setOnClickListener(new OnClickListener() {
+			RelativeLayout relativeLayout = (RelativeLayout) dayTouchedDialog.findViewById(R.id.day_touched_pill_clickable_layout);
+			Button bt = new Button(context);
+			relativeLayout.setBackgroundDrawable(bt.getBackground());
+			relativeLayout.setOnClickListener(new OnClickListener() {
 
 				@Override
 				public void onClick(View v) {
 					//The dialog that is going to be shown when the user clicks on the change button
 					final Dialog changePillType = new Dialog(context, R.style.NoTitleDialog);
 					changePillType.setContentView(R.layout.select_pill_type);
-					
+
 					//These are the six options of pill type that the user can set for a day
 					changePillType.findViewById(R.id.select_pill_type_pill_not_taken_layout).
 					setOnClickListener(new PillListClickListener(PillDayInfo.PILL_NOT_TAKEN, dayTouchedDialog, changePillType));
-					
+
 					changePillType.findViewById(R.id.select_pill_type_pill_taken_layout).
-						setOnClickListener(new PillListClickListener(PillDayInfo.PILL_TAKEN, dayTouchedDialog, changePillType));
-					
+					setOnClickListener(new PillListClickListener(PillDayInfo.PILL_TAKEN, dayTouchedDialog, changePillType));
+
 					changePillType.findViewById(R.id.select_pill_type_pill_taken_late_layout).
-						setOnClickListener(new PillListClickListener(PillDayInfo.PILL_TAKEN_LATE, dayTouchedDialog, changePillType));
-					
+					setOnClickListener(new PillListClickListener(PillDayInfo.PILL_TAKEN_LATE, dayTouchedDialog, changePillType));
+
 					changePillType.findViewById(R.id.select_pill_type_pill_pending_layout).
-						setOnClickListener(new PillListClickListener(PillDayInfo.PILL_PENDING, dayTouchedDialog, changePillType));
-					
+					setOnClickListener(new PillListClickListener(PillDayInfo.PILL_PENDING, dayTouchedDialog, changePillType));
+
 					changePillType.findViewById(R.id.select_pill_type_pill_rest_day_layout).
 					setOnClickListener(new PillListClickListener(PillDayInfo.PILL_REST_DAY, dayTouchedDialog, changePillType));
-					
+
 					changePillType.findViewById(R.id.select_pill_type_pill_placebo_layout).
 					setOnClickListener(new PillListClickListener(PillDayInfo.PILL_PLACEBO, dayTouchedDialog, changePillType));
-					
+
 					//Dismiss button
 					changePillType.findViewById(R.id.select_pill_type_button).setOnClickListener(new OnClickListener() {
 
@@ -288,7 +299,7 @@ public class CalendarCell extends RelativeLayout {
 					});
 					changePillType.show();
 				}
-				
+
 			});
 			//This edit text shows the note that was stored for this day
 			EditText noteText = (EditText) dayTouchedDialog.findViewById(R.id.day_touched_note_text);
@@ -296,50 +307,40 @@ public class CalendarCell extends RelativeLayout {
 			String note = db.getNote(String.valueOf(cellYear), String.valueOf(cellDayOfYear));
 			db.close();
 			noteText.setText(note);
-			//This button saves whatever there is in the previous edit text to the database
-			Button saveButton = (Button) dayTouchedDialog.findViewById(R.id.day_touched_note_save);
-			saveButton.setOnClickListener(new OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					DayStorageDB db = new DayStorageDB(context);
-					EditText noteText = (EditText) dayTouchedDialog.findViewById(R.id.day_touched_note_text);
-					Editable text = noteText.getText();
-					db.setNote(String.valueOf(cellYear), String.valueOf(cellDayOfYear), text.toString());
-					db.close();
-					Toast.makeText(context, "Note Saved", Toast.LENGTH_LONG).show();
-				}
-			});
+
 			//This button resets the text on the edit text to the previous note that there was stored
-			Button cancelButton = (Button) dayTouchedDialog.findViewById(R.id.day_touched_note_cancel);
+			Button cancelButton = (Button) dayTouchedDialog.findViewById(R.id.day_touched_cancel);
 			cancelButton.setOnClickListener(new OnClickListener() {
 				@Override
 				public void onClick(View v) {
-					EditText noteText = (EditText) dayTouchedDialog.findViewById(R.id.day_touched_note_text);
-					DayStorageDB db = new DayStorageDB(context);
-					String note = db.getNote(String.valueOf(cellYear), String.valueOf(cellDayOfYear));
-					db.close();
-					noteText.setText(note);
+					pillType = oldPillType;
+					dayTouchedDialog.dismiss();
 				}
 			});
-			//This button clears the text that was in the edit text (wether the stored or the new one introduced)
-			Button clearButton = (Button) dayTouchedDialog.findViewById(R.id.day_touched_note_clear);
-			clearButton.setOnClickListener(new OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					EditText noteText = (EditText) dayTouchedDialog.findViewById(R.id.day_touched_note_text);
-					noteText.getText().clear();
-				}
-			});
-			//Ok button, dismisses the dialog
+
+			//Ok button, saves whatever there is in the previous edit text to the database and dismisses the dialog
 			Button okButton = (Button) dayTouchedDialog.findViewById(R.id.day_touched_ok);
 			okButton.setOnClickListener(new OnClickListener() {
 				@Override
 				public void onClick(View v) {
+					oldPillType = pillType;
+					DayStorageDB db = new DayStorageDB(context);
+					//Save the note to the database
+					EditText noteText = (EditText) dayTouchedDialog.findViewById(R.id.day_touched_note_text);
+					Editable text = noteText.getText();
+					db.setNote(String.valueOf(cellYear), String.valueOf(cellDayOfYear), text.toString());
+					//Save the pill type to the database as well
+					db.setPillType(String.valueOf(cellYear), String.valueOf(cellDayOfYear), String.valueOf(pillType));
+					db.close();
+					//Set a toast that everything worked as expected
+					String toastText = context.getResources().getString(R.string.note_saved_text);
+					Toast.makeText(context, toastText, Toast.LENGTH_LONG).show();
 					imageButton.setBackgroundResource(setDays(cellMonth));
+					imageButton.invalidate();//To redraw the button
 					dayTouchedDialog.dismiss();
 				}
 			});
-			
+
 			dayTouchedDialog.show();
 		}
 		/**
@@ -349,7 +350,7 @@ public class CalendarCell extends RelativeLayout {
 		 *
 		 */
 		private class PillListClickListener implements View.OnClickListener {
-			
+
 			private int newPillType;
 			private Dialog dayTouchedDialog;
 			private Dialog changePillType;
@@ -365,19 +366,20 @@ public class CalendarCell extends RelativeLayout {
 				this.dayTouchedDialog = dayTouchedDialog;
 				this.changePillType = changePillType;
 			}
-			
+
 			@Override
 			/**
 			 * When clicked, changes the image of the previous dialog to the new pill type, stores the information
 			 * of the new pill type into the database, and dismisses this dialog
 			 */
 			public void onClick(View v) {
+				//Store the old pill type in case the user wants to cancel it late
+				oldPillType = pillType;
 				pillType = newPillType;
 				ImageView imageView = (ImageView) dayTouchedDialog.findViewById(R.id.day_touched_pill_image);
 				imageView.setBackgroundResource(getDrawable());
-				DayStorageDB db = new DayStorageDB(context);
-				db.updatePillType(String.valueOf(cellYear), String.valueOf(cellDayOfYear), String.valueOf(pillType));
-				db.close();
+				TextView pillTextView = (TextView) dayTouchedDialog.findViewById(R.id.day_touched_pill_text);
+				pillTextView.setText(getPillTypeText());
 				changePillType.dismiss();
 			}
 		}
