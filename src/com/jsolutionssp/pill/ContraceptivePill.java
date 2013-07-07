@@ -64,6 +64,7 @@ public class ContraceptivePill extends SherlockFragmentActivity {
 			//Add tabs to action bar
 			actionBar.addTab(tab1);
 			actionBar.addTab(tab2);
+			
 			if (isFirstPreferenceTime())
 				tab2.select();
 			else if (isFirstCalendarTime()) {
@@ -89,6 +90,7 @@ public class ContraceptivePill extends SherlockFragmentActivity {
 			//Add tabs to action bar
 			actionBar.addTab(tab1);
 			actionBar.addTab(tab2);
+			
 			if (isFirstPreferenceTime())
 				tab2.select();
 			else if (isFirstCalendarTime()) {

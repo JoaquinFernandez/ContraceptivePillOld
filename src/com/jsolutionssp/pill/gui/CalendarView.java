@@ -39,6 +39,10 @@ public class CalendarView extends LinearLayout {
 	
 	/** Year that we're showing in the screen */
 	private int year;
+
+	ImageView nextMonth;
+	
+	ImageView prevMonth;
 	
 	/**
 	 * Constructor, it initializes this layout information
@@ -50,6 +54,9 @@ public class CalendarView extends LinearLayout {
 		//Inflate the layout
 		LayoutInflater layoutInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		calendarLayout = (LinearLayout) layoutInflater.inflate(R.layout.calendar, this);
+		//Retrieve month ImageViews
+		nextMonth = (ImageView) calendarLayout.findViewById(R.id.nextMonth);
+		prevMonth  = (ImageView) calendarLayout.findViewById(R.id.prevMonth);
 		//Initialize parameters
 		this.context = context;
 		months = getResources().getStringArray(R.array.months);
@@ -68,21 +75,11 @@ public class CalendarView extends LinearLayout {
 	 * the year as well as the month
 	 */
 	private void setListeners() {
-		final ImageView nextMonth = (ImageView) calendarLayout.findViewById(R.id.nextMonth);
-		final ImageView prevMonth = (ImageView) calendarLayout.findViewById(R.id.prevMonth);
 		nextMonth.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				nextMonth.setAnimation(AnimationUtils.loadAnimation(context, R.anim.right_arrow));
-				if (month == 11) {
-					month = 0;
-					year++;
-				}
-				else
-					month++;
-				fillGrid();
-				setMonth();				
+				setNextMonth();
 			}
 
 		});
@@ -90,17 +87,34 @@ public class CalendarView extends LinearLayout {
 
 			@Override
 			public void onClick(View v) {
-				prevMonth.setAnimation(AnimationUtils.loadAnimation(context, R.anim.left_arrow));
-				if (month == 0) {
-					month = ContraceptivePill.months;
-					year--;
-				}
-				else
-					month--;
-				fillGrid();
-				setMonth();				
+				setPreviousMonth();
 			}
 		});
+	}
+
+	protected void setPreviousMonth() {
+		prevMonth.setAnimation(AnimationUtils.loadAnimation(context, R.anim.left_arrow));
+		if (month == 0) {
+			month = ContraceptivePill.months;
+			year--;
+		}
+		else
+			month--;
+		fillGrid();
+		setMonth();		
+	}
+
+	protected void setNextMonth() {
+		nextMonth.setAnimation(AnimationUtils.loadAnimation(context, R.anim.right_arrow));
+		if (month == 11) {
+			month = 0;
+			year++;
+		}
+		else
+			month++;
+		fillGrid();
+		setMonth();		
+		
 	}
 
 	/**
