@@ -15,6 +15,7 @@ public final class R {
     }
     public static final class array {
         public static final int months=0x7f0d0003;
+        public static final int pill_state_types=0x7f0d0005;
         public static final int pill_types=0x7f0d0000;
         /**  Format is NumberTakingDays/NumberPlaceboDays/NumberOfRestDays 
          */
@@ -1186,9 +1187,9 @@ containing a value of this type.
         public static final int text_desktop_background=0x7f0200a3;
     }
     public static final class id {
-        public static final int MnuOpt1=0x7f08006b;
-        public static final int MnuOpt2=0x7f08006c;
-        public static final int MnuOpt3=0x7f08006d;
+        public static final int MnuOpt1=0x7f08005b;
+        public static final int MnuOpt2=0x7f08005c;
+        public static final int MnuOpt3=0x7f08005d;
         public static final int about_dialog_ok=0x7f080013;
         public static final int about_dialog_rate=0x7f080012;
         public static final int about_dialog_version=0x7f080011;
@@ -1269,25 +1270,9 @@ containing a value of this type.
         public static final int pref_num_picker=0x7f080057;
         public static final int prevMonth=0x7f080038;
         public static final int select_dialog_text=0x7f080049;
-        public static final int select_pill_type_button=0x7f08006a;
-        public static final int select_pill_type_pill_not_taken_image=0x7f080059;
-        public static final int select_pill_type_pill_not_taken_layout=0x7f080058;
-        public static final int select_pill_type_pill_not_taken_text=0x7f08005a;
-        public static final int select_pill_type_pill_pending_image=0x7f080062;
-        public static final int select_pill_type_pill_pending_layout=0x7f080061;
-        public static final int select_pill_type_pill_pending_text=0x7f080063;
-        public static final int select_pill_type_pill_placebo_image=0x7f080068;
-        public static final int select_pill_type_pill_placebo_layout=0x7f080067;
-        public static final int select_pill_type_pill_placebo_text=0x7f080069;
-        public static final int select_pill_type_pill_rest_day_image=0x7f080065;
-        public static final int select_pill_type_pill_rest_day_layout=0x7f080064;
-        public static final int select_pill_type_pill_rest_day_text=0x7f080066;
-        public static final int select_pill_type_pill_taken_image=0x7f08005c;
-        public static final int select_pill_type_pill_taken_late_image=0x7f08005f;
-        public static final int select_pill_type_pill_taken_late_layout=0x7f08005e;
-        public static final int select_pill_type_pill_taken_late_text=0x7f080060;
-        public static final int select_pill_type_pill_taken_layout=0x7f08005b;
-        public static final int select_pill_type_pill_taken_text=0x7f08005d;
+        public static final int select_pill_type_button=0x7f080059;
+        public static final int select_pill_type_list=0x7f080058;
+        public static final int select_pill_type_textview=0x7f08005a;
         public static final int showCustom=0x7f080008;
         public static final int showHome=0x7f080005;
         public static final int showTitle=0x7f080007;
@@ -1339,9 +1324,10 @@ containing a value of this type.
         public static final int number_picker_preference=0x7f030023;
         public static final int pref_number_picker=0x7f030024;
         public static final int select_pill_type=0x7f030025;
-        public static final int sherlock_spinner_dropdown_item=0x7f030026;
-        public static final int sherlock_spinner_item=0x7f030027;
-        public static final int tour_dialog=0x7f030028;
+        public static final int select_pill_type_element=0x7f030026;
+        public static final int sherlock_spinner_dropdown_item=0x7f030027;
+        public static final int sherlock_spinner_item=0x7f030028;
+        public static final int tour_dialog=0x7f030029;
     }
     public static final class menu {
         public static final int menu=0x7f0e0000;
@@ -1393,55 +1379,48 @@ containing a value of this type.
          */
         public static final int abs__shareactionprovider_share_with_application=0x7f06000c;
         public static final int app_name=0x7f060012;
-        public static final int app_version=0x7f060014;
-        public static final int button_calificate=0x7f06002f;
-        public static final int button_cancel=0x7f060024;
-        public static final int button_close=0x7f060025;
-        public static final int button_ok=0x7f060022;
-        public static final int button_save=0x7f060023;
-        public static final int buy_alarm_preferences=0x7f06003a;
-        public static final int calendar_info=0x7f060030;
-        public static final int calendar_instructions=0x7f060031;
-        public static final int calendar_tab_name=0x7f06001e;
-        public static final int company_name=0x7f060016;
-        public static final int contraceptive_pill_type_preferences=0x7f060036;
-        public static final int day_touched_note_title=0x7f060029;
+        public static final int app_version=0x7f060013;
+        public static final int button_calificate=0x7f060028;
+        public static final int button_cancel=0x7f06001d;
+        public static final int button_close=0x7f06001e;
+        public static final int button_ok=0x7f06001b;
+        public static final int button_save=0x7f06001c;
+        public static final int buy_alarm_preferences=0x7f060033;
+        public static final int calendar_info=0x7f060029;
+        public static final int calendar_instructions=0x7f06002a;
+        public static final int calendar_tab_name=0x7f060017;
+        public static final int company_name=0x7f060015;
+        public static final int contraceptive_pill_type_preferences=0x7f06002f;
+        public static final int day_touched_note_title=0x7f060022;
         public static final int dialog_cancel=0x7f060001;
         public static final int dialog_picker_title=0x7f060002;
         public static final int dialog_set_number=0x7f060000;
-        public static final int diary_alarm_preferences=0x7f060039;
-        public static final int email=0x7f060015;
-        public static final int help_traducing=0x7f060017;
-        public static final int menu_about=0x7f060026;
-        public static final int menu_exit=0x7f060027;
-        public static final int menu_info=0x7f060028;
-        public static final int note_saved_text=0x7f060040;
-        public static final int notification_bar_cycle_text1=0x7f06002b;
-        public static final int notification_bar_cycle_text2=0x7f06002c;
-        public static final int notification_bar_cycle_text3=0x7f06002d;
-        public static final int notification_bar_cycle_text4=0x7f06002e;
-        public static final int notification_bar_diary_text=0x7f06002a;
-        public static final int pill_not_taken=0x7f060019;
-        public static final int pill_pending=0x7f06001b;
-        public static final int pill_placebo=0x7f06001c;
-        public static final int pill_rest_day=0x7f06001d;
-        public static final int pill_taken=0x7f060018;
-        public static final int pill_taken_late=0x7f06001a;
-        public static final int preferences_activity_title=0x7f060013;
-        public static final int preferences_alarms_separator=0x7f060020;
-        public static final int preferences_calendar_separator=0x7f06001f;
-        public static final int preferences_instructions_first=0x7f060032;
-        public static final int preferences_instructions_fourth=0x7f060035;
-        public static final int preferences_instructions_second=0x7f060033;
-        public static final int preferences_instructions_third=0x7f060034;
-        public static final int preferences_tab_name=0x7f060021;
-        public static final int previous_days_preferences=0x7f06003b;
-        public static final int ringtone_preferences=0x7f06003f;
-        public static final int set_time_preferences=0x7f06003c;
-        public static final int sound_preferences=0x7f06003d;
-        public static final int start_pack_date_preferences=0x7f060038;
-        public static final int vibration_preferences=0x7f06003e;
-        public static final int week_start_day_preferences=0x7f060037;
+        public static final int diary_alarm_preferences=0x7f060032;
+        public static final int email=0x7f060014;
+        public static final int help_traducing=0x7f060016;
+        public static final int menu_about=0x7f06001f;
+        public static final int menu_exit=0x7f060020;
+        public static final int menu_info=0x7f060021;
+        public static final int note_saved_text=0x7f060039;
+        public static final int notification_bar_cycle_text1=0x7f060024;
+        public static final int notification_bar_cycle_text2=0x7f060025;
+        public static final int notification_bar_cycle_text3=0x7f060026;
+        public static final int notification_bar_cycle_text4=0x7f060027;
+        public static final int notification_bar_diary_text=0x7f060023;
+        public static final int preferences_alarms_separator=0x7f060019;
+        public static final int preferences_calendar_separator=0x7f060018;
+        public static final int preferences_instructions_first=0x7f06002b;
+        public static final int preferences_instructions_fourth=0x7f06002e;
+        public static final int preferences_instructions_second=0x7f06002c;
+        public static final int preferences_instructions_third=0x7f06002d;
+        public static final int preferences_tab_name=0x7f06001a;
+        public static final int previous_days_preferences=0x7f060034;
+        public static final int ringtone_preferences=0x7f060038;
+        public static final int set_time_preferences=0x7f060035;
+        public static final int sound_preferences=0x7f060036;
+        public static final int start_pack_date_preferences=0x7f060031;
+        public static final int vibration_preferences=0x7f060037;
+        public static final int week_start_day_preferences=0x7f060030;
     }
     public static final class style {
         public static final int DialogWindowTitle_Sherlock=0x7f07003c;

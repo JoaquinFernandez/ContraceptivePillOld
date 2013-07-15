@@ -23,7 +23,14 @@ public class PillDayInfo {
 	public static final int PILL_PLACEBO = 4;
 
 	public static final int PILL_REST_DAY = 5;
+	
+	public static final int[] PILL_TYPES = {PILL_TAKEN, PILL_NOT_TAKEN, 
+		PILL_TAKEN_LATE, PILL_PENDING, PILL_PLACEBO, PILL_REST_DAY};
 
+	public static final int[] IMAGES = {R.drawable.pill_taken, R.drawable.pill_not_taken
+			, R.drawable.pill_taken_late, R.drawable.pill_pending, R.drawable.pill_placebo
+			, R.drawable.pill_rest_day};
+	
 	private static SharedPreferences settings;
 
 	private Context context;

@@ -73,7 +73,6 @@ public class ContraceptivePill extends SherlockFragmentActivity {
 		CalendarPagerAdapter  pagerAdapter = new CalendarPagerAdapter(getSupportFragmentManager());
 		pager.setAdapter(pagerAdapter);
 		pager.setCurrentItem(CalendarPagerAdapter.MAX_VIEWS/2);//Sets the visible item to the half
-
 	}
 
 	private boolean isFirstCalendarTime() {
@@ -129,7 +128,7 @@ public class ContraceptivePill extends SherlockFragmentActivity {
 		case R.id.MnuOpt2:
 			//The dialog that is going to be shown when the user clicks on the change button
 			final Dialog changePillType = new Dialog(this, R.style.NoTitleDialog);
-			changePillType.setContentView(R.layout.select_pill_type);
+			changePillType.setContentView(R.layout.select_pill_type_element);
 			Button button = (Button) changePillType.findViewById(R.id.select_pill_type_button);
 			button.setText(getResources().getString(R.string.button_close));
 			//Dismiss button

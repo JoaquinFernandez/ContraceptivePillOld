@@ -2,7 +2,6 @@
 <resources>
 
     <string name="app_name">Contraceptive Pill</string>
-    <string name="preferences_activity_title">Contraceptive Pill</string>
     <string name="app_version">Version</string>
     <string name="email">pill@jfma.es \n</string>
     <string name="company_name">JFMA ™</string>
@@ -52,13 +51,16 @@
         <item>Monday</item>
         <item>Sunday</item>
     </string-array>
-
-    <string name="pill_taken">Pill already taken</string>
-    <string name="pill_not_taken">Pill forgotten</string>
-    <string name="pill_taken_late">Pill took out of time</string>
-    <string name="pill_pending">Pill still to take</string>
-    <string name="pill_placebo">Placebo pill to take</string>
-    <string name="pill_rest_day">Rest Day</string>
+    
+    <string-array name="pill_state_types">
+        <item>Pill already taken</item>
+        <item>Pill forgotten</item>
+        <item>Pill took out of time</item>
+        <item>Pill still to take</item>
+        <item>Placebo pill to take</item>
+        <item>Rest Day</item>
+    </string-array>
+    
     <string name="calendar_tab_name">Calendar</string>
     <string name="preferences_calendar_separator">Calendar</string>
     <string name="preferences_alarms_separator">Alarms</string>
@@ -79,7 +81,7 @@
     <string name="button_calificate">Rate!</string>
     <string name="calendar_info">Calendar info</string>
     <string name="calendar_instructions"> \n Here you have the calendar, you can navigate through
-        months and, when clicking on a day you can write a note for that day, or change what happened
+        months (swipe from left to the right) and, when clicking on a day you can write a note for that day, or change what happened
         with the pill that day (you forgot to take it, you took it too late, etc.)\nYou can take
         a look at the pill color code by clicking on the info button (up-right)</string>
     <string name="preferences_instructions_first"> Please select your type of pill, clicking

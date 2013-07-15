@@ -17,12 +17,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jsolutionssp.pill.PillDayInfo;
 import com.jsolutionssp.pill.R;
+import com.jsolutionssp.pill.adapter.PillSelectBaseAdapter;
 import com.jsolutionssp.pill.db.DayStorageDB;
 
 /**
@@ -56,9 +58,6 @@ public class CalendarCell extends RelativeLayout {
 
 	/** The button with the image representing the pill type as background */
 	private ImageButton imageButton;
-	
-	/** Variable to store temporarily the old pill type the user has selected */
-	private int oldPillType;
 
 	/**
 	 * Constructor that initializes all the data necessary for this cell to be showed in the screen
@@ -151,26 +150,27 @@ public class CalendarCell extends RelativeLayout {
 	 * Auxiliary method that checks the pill type this cell has
 	 * @return the String that represents the pill type of this cell
 	 */
-	private int getPillTypeText() {
+	private String getPillTypeText() {
+		String[] pillStates = context.getResources().getStringArray(R.array.pill_state_types);
 		//Return background resource
 		switch (pillType) {
 		case PillDayInfo.PILL_TAKEN:
-			return R.string.pill_taken;
+			return pillStates[0];
 
 		case PillDayInfo.PILL_NOT_TAKEN:
-			return R.string.pill_not_taken;
+			return pillStates[1];
 
 		case PillDayInfo.PILL_TAKEN_LATE:
-			return R.string.pill_taken_late;
+			return pillStates[2];
 
 		case PillDayInfo.PILL_PENDING:
-			return R.string.pill_pending;
+			return pillStates[3];
 
 		case PillDayInfo.PILL_PLACEBO:
-			return R.string.pill_placebo;
+			return pillStates[4];
 
 		default:
-			return R.string.pill_rest_day;
+			return pillStates[5];
 		}
 	}
 
@@ -259,7 +259,7 @@ public class CalendarCell extends RelativeLayout {
 			TextView pillTextView = (TextView) dayTouchedDialog.findViewById(R.id.day_touched_pill_text);
 			pillTextView.setText(getPillTypeText());
 			//Change button, shows a new dialog with a list of the pill types so the user can change it
-			RelativeLayout relativeLayout = (RelativeLayout) dayTouchedDialog.findViewById(R.id.day_touched_pill_clickable_layout);
+			final RelativeLayout relativeLayout = (RelativeLayout) dayTouchedDialog.findViewById(R.id.day_touched_pill_clickable_layout);
 			Button bt = new Button(context);
 			relativeLayout.setBackgroundDrawable(bt.getBackground());
 			relativeLayout.setOnClickListener(new OnClickListener() {
@@ -270,25 +270,8 @@ public class CalendarCell extends RelativeLayout {
 					final Dialog changePillType = new Dialog(context, R.style.NoTitleDialog);
 					changePillType.setContentView(R.layout.select_pill_type);
 
-					//These are the six options of pill type that the user can set for a day
-					changePillType.findViewById(R.id.select_pill_type_pill_not_taken_layout).
-					setOnClickListener(new PillListClickListener(PillDayInfo.PILL_NOT_TAKEN, dayTouchedDialog, changePillType));
-
-					changePillType.findViewById(R.id.select_pill_type_pill_taken_layout).
-					setOnClickListener(new PillListClickListener(PillDayInfo.PILL_TAKEN, dayTouchedDialog, changePillType));
-
-					changePillType.findViewById(R.id.select_pill_type_pill_taken_late_layout).
-					setOnClickListener(new PillListClickListener(PillDayInfo.PILL_TAKEN_LATE, dayTouchedDialog, changePillType));
-
-					changePillType.findViewById(R.id.select_pill_type_pill_pending_layout).
-					setOnClickListener(new PillListClickListener(PillDayInfo.PILL_PENDING, dayTouchedDialog, changePillType));
-
-					changePillType.findViewById(R.id.select_pill_type_pill_rest_day_layout).
-					setOnClickListener(new PillListClickListener(PillDayInfo.PILL_REST_DAY, dayTouchedDialog, changePillType));
-
-					changePillType.findViewById(R.id.select_pill_type_pill_placebo_layout).
-					setOnClickListener(new PillListClickListener(PillDayInfo.PILL_PLACEBO, dayTouchedDialog, changePillType));
-
+					ListView list = (ListView) changePillType.findViewById(R.id.select_pill_type_list);
+					list.setAdapter(new PillSelectBaseAdapter(context, relativeLayout, changePillType));
 					//Dismiss button
 					changePillType.findViewById(R.id.select_pill_type_button).setOnClickListener(new OnClickListener() {
 
@@ -299,7 +282,6 @@ public class CalendarCell extends RelativeLayout {
 					});
 					changePillType.show();
 				}
-
 			});
 			//This edit text shows the note that was stored for this day
 			EditText noteText = (EditText) dayTouchedDialog.findViewById(R.id.day_touched_note_text);
@@ -313,7 +295,6 @@ public class CalendarCell extends RelativeLayout {
 			cancelButton.setOnClickListener(new OnClickListener() {
 				@Override
 				public void onClick(View v) {
-					pillType = oldPillType;
 					dayTouchedDialog.dismiss();
 				}
 			});
@@ -323,7 +304,14 @@ public class CalendarCell extends RelativeLayout {
 			okButton.setOnClickListener(new OnClickListener() {
 				@Override
 				public void onClick(View v) {
-					oldPillType = pillType;
+					String[] pillStates = context.getResources().getStringArray(R.array.pill_state_types);
+					TextView pillTextView = (TextView) relativeLayout.findViewById(R.id.day_touched_pill_text);
+					for (int i = 0; i < pillStates.length; i++) {
+						if (pillTextView.getText().toString().equalsIgnoreCase(pillStates[i])) {
+							pillType = PillDayInfo.PILL_TYPES[i];
+							break;
+						}
+					}
 					DayStorageDB db = new DayStorageDB(context);
 					//Save the note to the database
 					EditText noteText = (EditText) dayTouchedDialog.findViewById(R.id.day_touched_note_text);
@@ -343,102 +331,5 @@ public class CalendarCell extends RelativeLayout {
 
 			dayTouchedDialog.show();
 		}
-		/**
-		 * Listener that is called when te user clicks on any of the change pill type options, and it stores
-		 * the new pill type in the database and dismisses the dialog
-		 * @author Joaquin Fernandez Moreno
-		 *
-		 */
-		private class PillListClickListener implements View.OnClickListener {
-
-			private int newPillType;
-			private Dialog dayTouchedDialog;
-			private Dialog changePillType;
-
-			/**
-			 * Constructor of the listener, it initializes the values needed
-			 * @param newPillType the new pill type that the user selected
-			 * @param dayTouchedDialog the dialog that shows the information of the cell (day) selected
-			 * @param changePillType the dialog that shows the different pill types 
-			 */
-			public PillListClickListener(int newPillType, Dialog dayTouchedDialog, Dialog changePillType) {
-				this.newPillType = newPillType;
-				this.dayTouchedDialog = dayTouchedDialog;
-				this.changePillType = changePillType;
-			}
-
-			@Override
-			/**
-			 * When clicked, changes the image of the previous dialog to the new pill type, stores the information
-			 * of the new pill type into the database, and dismisses this dialog
-			 */
-			public void onClick(View v) {
-				//Store the old pill type in case the user wants to cancel it late
-				oldPillType = pillType;
-				pillType = newPillType;
-				ImageView imageView = (ImageView) dayTouchedDialog.findViewById(R.id.day_touched_pill_image);
-				imageView.setBackgroundResource(getDrawable());
-				TextView pillTextView = (TextView) dayTouchedDialog.findViewById(R.id.day_touched_pill_text);
-				pillTextView.setText(getPillTypeText());
-				changePillType.dismiss();
-			}
-		}
 	}
 }
-
-/*else if (event.getAction() == MotionEvent.ACTION_UP) {
-if (settings.getBoolean("firstRunDayCell", true)) {
-	editor.putInt("startCycleDayofYear", representingDayofYear);
-	editor.putInt("startCycleYear", representingYear);
-	editor.putBoolean("firstRunDayCell", false);
-	editor.commit();
-	CalendarView cal = (CalendarView) ((Activity) context).findViewById(R.id.main_calendar);
-	cal.fillGrid();
-	final Dialog selectDayDialog = new Dialog(context, R.style.NoTitleDialog);
-	selectDayDialog.setContentView(R.layout.info_dialog);
-	TextView dialogText = (TextView) selectDayDialog.findViewById(R.id.info_dialog_text);
-	dialogText.setText(R.string.alarm_info_toast);
-	Button button = (Button) selectDayDialog.findViewById(R.id.info_dialog_button);
-	button.setOnClickListener(new OnClickListener() {
-		@Override
-		public void onClick(View v) {
-			selectDayDialog.dismiss();
-		}
-	});
-	selectDayDialog.show();
-	return true;
-}
-else {
-	final Dialog dialog = new Dialog(context);
-	dialog.setContentView(R.layout.day_touched_dialog);
-	String text = representingDay + "/" + (representingMonth + 1) + "/" + representingYear;
-	dialog.setTitle(text);
-
-	//Button buttonOK = (Button) dialog.findViewById(R.id.day_touched_button_ok);
-	//buttonOK.setOnClickListener(new OnClickListener() {
-		//@Override
-		//public void onClick(View v) {
-			//editor.putInt("startCycleDayofYear", representingDayofYear);
-		//	editor.putInt("startCycleYear", representingYear);
-			//editor.commit();
-		//	CalendarView cal = (CalendarView) ((Activity) context).findViewById(R.id.main_calendar);
-		//	cal.fillGrid();
-		//	dialog.dismiss();
-		//	Intent i = new Intent(context, SetAlarms.class);
-		//	i.setAction("com.jsolutionssp.pill.updateAlarm");
-		//	context.sendBroadcast(i);
-	//	}
-	//});
-	//Button buttonNO = (Button) dialog.findViewById(R.id.day_touched_button_no);
-	//buttonNO.setOnClickListener(new OnClickListener() {
-		//@Override
-		//public void onClick(View v) {
-			//dialog.dismiss();
-	//	}
-	//});
-	dialog.show();
-	return true;
-}
-}
-return super.onTouchEvent(event);	
-}*/

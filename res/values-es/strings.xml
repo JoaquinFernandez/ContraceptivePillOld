@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Píldora </string>
-    <string name="preferences_activity_title">Píldora anticonceptiva</string>
+    <string name="app_name">Píldora Anticonceptiva</string>
     <string name="app_version">Version</string>
     <string name="email">pill@jfma.es \n</string>
     <string name="company_name">JFMA ™</string>
@@ -43,13 +42,16 @@
         <item>Lunes</item>
         <item>Domingo</item>
     </string-array>
-
-    <string name="pill_taken">Píldora ya tomada</string>
-    <string name="pill_not_taken">Píldora olvidada</string>
-    <string name="pill_taken_late">Píldora tomada tarde</string>
-    <string name="pill_pending">Píldora pendiente de tomar</string>
-    <string name="pill_placebo">Píldora de placebo</string>
-    <string name="pill_rest_day">Día de descanso</string>
+        
+    <string-array name="pill_state_types">
+        <item>Píldora tomada</item>
+        <item>Píldora olvidada</item>
+        <item>Píldora tomada tarde</item>
+        <item>Píldora pendiente</item>
+        <item>Píldora de placebo</item>
+        <item>Día de descanso</item>
+    </string-array>
+    
     <string name="calendar_tab_name">Calendario</string>
     <string name="preferences_calendar_separator">Calendario</string>
     <string name="preferences_alarms_separator">Alarmas</string>
@@ -69,10 +71,10 @@
     <string name="notification_bar_cycle_text4">Tu ciclo de la píldora empieza mañana!</string>
     <string name="button_calificate">¡Opina!</string>
     <string name="calendar_info">Información</string>
-    <string name="calendar_instructions"> \n Aquí está el calendario, puedes navegar por los meses y, 
-        cuando pinches en un día, puedes escribir notas sobre ese día, o cambiar lo que pasó con la 
-        píldora ese día (se te olvidó tomarla, o la tomaste muy tarde, etc.)\nPuedes ver la leyenda
-        de colores de la pildora en informacion, en el menu</string>
+    <string name="calendar_instructions"> \n Aquí está el calendario, puedes navegar por los meses (Deslizando
+        con los dedos) y, cuando pinches en un día, puedes escribir notas sobre ese día, o cambiar 
+        lo que pasó con la píldora ese día (se te olvidó tomarla, o la tomaste muy tarde, etc.)\n
+        Puedes ver la leyenda de colores de la pildora en informacion, en el menu</string>
      <string name="preferences_instructions_first"> Por favor, selecciona el tipo de píldora que utilizas,
          pinchando en tipo de píldora anticonceptiva</string>
     <string name="preferences_instructions_second"> Ahora por favor, elige el día en que comenzaste a tomar
@@ -82,7 +84,7 @@
     <string name="preferences_instructions_fourth"> Ahora puedes seleccionar las alarmas, para que te avise
         de cuando tienes que tomar la pildora, o cuando debes comprarla</string>
     <string name="contraceptive_pill_type_preferences"><item>Tipo de píldora anticonceptiva</item></string>
-    <string name="week_start_day_preferences">Día de comienzo de la semana en el calendario</string>
+    <string name="week_start_day_preferences">Primer día de la semana en el calendario</string>
     <string name="start_pack_date_preferences">Comienzo de ciclo</string>
     <string name="diary_alarm_preferences">Alarma diaria</string>
     <string name="buy_alarm_preferences">Alarma de compra</string>

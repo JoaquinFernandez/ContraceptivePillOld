@@ -101,6 +101,9 @@ public class PreferencesActivityV7 extends SherlockPreferenceActivity implements
 		preferenceCallbacks(key);
 		Preference pref = findPreference(key);
 		checkPreference(pref);
+		Intent i = new Intent(this, SetAlarms.class);
+		i.setAction("com.jsolutionssp.pill.updateAlarm");
+		sendBroadcast(i);
 	}
 
 	private void preferenceCallbacks(String key) {
@@ -120,13 +123,6 @@ public class PreferencesActivityV7 extends SherlockPreferenceActivity implements
 		if (key.equalsIgnoreCase("start_week_day")) {
 			if (isFirstTime())
 				preferenceTour(3);
-		}
-		//Just need to check if cycle_alarm or diary_alarm strings are in the key of the preference changed
-		//because any preference relative to the same alarm start with the same prefix
-		if (key.indexOf("cycle_alarm") != -1 || key.indexOf("diary_alarm") != -1) {
-			Intent i = new Intent(this, SetAlarms.class);
-			i.setAction("com.jsolutionssp.pill.updateAlarm");
-			sendBroadcast(i);
 		}
 	}
 
