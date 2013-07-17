@@ -42,12 +42,9 @@ public class SetAlarms extends BroadcastReceiver {
                                 }
                         }
                 }
-                
-
                 boolean cycle = settings.getBoolean("cycle_alarm", false);
                 boolean isTodayCycleAlarmDay = isTodayCycleAlarmDay();
                 if (cycle && isTodayCycleAlarmDay) {
-                        
                         long cycleAlarmTime = getCycleAlarmTime();
                         if (cycleAlarmTime != -1) {
                                 Intent i = new Intent("triggerCycleAlarm");
@@ -78,7 +75,7 @@ public class SetAlarms extends BroadcastReceiver {
                 calendar.set(GregorianCalendar.DAY_OF_YEAR, (calendar.get(GregorianCalendar.DAY_OF_YEAR) - 1));
                 int dayBefore = pillDayInfo.getPillType(calendar, 
                                 calendar.get(Calendar.DAY_OF_YEAR),calendar.get(Calendar.YEAR));
-                if (representingDay == PillDayInfo.PILL_PENDING && dayBefore == PillDayInfo.PILL_REST_DAY)
+                if (representingDay == PillDayInfo.PILL_PENDING && ((dayBefore == PillDayInfo.PILL_REST_DAY) || (dayBefore == PillDayInfo.PILL_PLACEBO)))
                         return true;
                 
                 return false;
@@ -101,14 +98,20 @@ public class SetAlarms extends BroadcastReceiver {
         }
         
         private long getAlarmTime(String time) {
+        		//Gets the time and hour from the time stored
                 if (time.contentEquals(""))
                         return -1;
                 String[] pieces = time.split(":");
                 int hour = Integer.parseInt(pieces[0]);
                 int minute = Integer.parseInt(pieces[1]);
+                //Check that the time has not passed, if so, return -1 (cancel)
                 GregorianCalendar date = new GregorianCalendar();
+                long actualTimeInMillis = date.getTimeInMillis();
                 date.set(Calendar.HOUR_OF_DAY, hour);
                 date.set(Calendar.MINUTE, minute);
-                return date.getTimeInMillis();
+                long alarmTimeInMillis = date.getTimeInMillis();
+                if (alarmTimeInMillis >= actualTimeInMillis)
+                	return alarmTimeInMillis;
+                return -1;
         }
 }

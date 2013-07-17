@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
+import android.preference.PreferenceManager;
 
 import com.jsolutionssp.pill.ContraceptivePill;
 import com.jsolutionssp.pill.R;
@@ -20,7 +21,7 @@ public class DiaryAlarmTriggered extends BroadcastReceiver {
         @Override
         public void onReceive(Context context, Intent intent) {
                 this.context = context;
-                settings = context.getSharedPreferences(ContraceptivePill.PREFS_NAME, 0);
+                settings = PreferenceManager.getDefaultSharedPreferences(context);
                 String tickerText = context.getResources().getText(R.string.notification_bar_diary_text).toString() ;
                 boolean sound = false;
                 if (settings.getInt("diary_alarm_ringtone", -1) == 1)

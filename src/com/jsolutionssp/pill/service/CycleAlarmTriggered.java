@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
+import android.preference.PreferenceManager;
 
 import com.jsolutionssp.pill.ContraceptivePill;
 import com.jsolutionssp.pill.R;
@@ -18,40 +19,37 @@ public class CycleAlarmTriggered extends BroadcastReceiver {
 	private SharedPreferences settings;
 
 	@Override
-    public void onReceive(Context context, Intent intent) {
-    	this.context = context;
-		settings = context.getSharedPreferences(ContraceptivePill.PREFS_NAME, 0);
-		int cycle = settings.getInt("cycleAlarm", -1);
-		if (cycle == 1) {
-			String tickerText;
-			int day = settings.getInt("cycle_alarm_prev_days", -1);
-			if (day == -1)
-				tickerText = null;
-			else if (day == 0)
-				tickerText = context.getResources().getText(R.string.notification_bar_cycle_text3).toString();
-			else if (day == 1) {
-				tickerText = context.getResources().getText(R.string.notification_bar_cycle_text4).toString();
-			}
-			else {
-				tickerText = context.getResources().getText(R.string.notification_bar_cycle_text1).toString();
-				tickerText += " " + day + " ";
-				tickerText += context.getResources().getText(R.string.notification_bar_cycle_text2).toString();
-			}
-			boolean sound = false;
-			if (settings.getInt("cycle_alarm_ringtone", -1) == 1)
-				sound = true;
-			boolean vibrate = false;
-			if (settings.getInt("cycle_alarm_vibrate", -1) == 1)
-				vibrate = true;
-			
-			if (tickerText != null)
-				notificate(tickerText, sound, vibrate);
+	public void onReceive(Context context, Intent intent) {
+		this.context = context;
+		settings = PreferenceManager.getDefaultSharedPreferences(context);
+		String tickerText;
+		int day = settings.getInt("cycle_alarm_prev_days", -1);
+		if (day == -1)
+			tickerText = null;
+		else if (day == 0)
+			tickerText = context.getResources().getText(R.string.notification_bar_cycle_text3).toString();
+		else if (day == 1) {
+			tickerText = context.getResources().getText(R.string.notification_bar_cycle_text4).toString();
 		}
-    }
-    
-    private void notificate(String title, boolean sound, boolean vibrate) {
+		else {
+			tickerText = context.getResources().getText(R.string.notification_bar_cycle_text1).toString();
+			tickerText += " " + day + " ";
+			tickerText += context.getResources().getText(R.string.notification_bar_cycle_text2).toString();
+		}
+		boolean sound = false;
+		if (settings.getInt("cycle_alarm_ringtone", -1) == 1)
+			sound = true;
+		boolean vibrate = false;
+		if (settings.getInt("cycle_alarm_vibrate", -1) == 1)
+			vibrate = true;
 
-    	String ns = Context.NOTIFICATION_SERVICE;
+		if (tickerText != null)
+			notificate(tickerText, sound, vibrate);
+	}
+
+	private void notificate(String title, boolean sound, boolean vibrate) {
+
+		String ns = Context.NOTIFICATION_SERVICE;
 		NotificationManager mNotificationManager = (NotificationManager) context.getSystemService(ns);
 		int icon = R.drawable.pill_icon;
 		long when = System.currentTimeMillis();
@@ -68,9 +66,9 @@ public class CycleAlarmTriggered extends BroadcastReceiver {
 			notification.defaults |= Notification.DEFAULT_SOUND;
 			notification.flags |= Notification.FLAG_INSISTENT;
 			String audio = settings.getString("cycle_alarm_ringtone", "");
-            if (audio != "")
-                    notification.sound = Uri.parse(audio);
-            //else use default
+			if (audio != "")
+				notification.sound = Uri.parse(audio);
+			//else use default
 		}
 		if (vibrate) {
 			notification.defaults |= Notification.DEFAULT_VIBRATE;
@@ -80,7 +78,7 @@ public class CycleAlarmTriggered extends BroadcastReceiver {
 		notification.ledOnMS = 600;
 		notification.ledOffMS = 900;
 		notification.flags |= Notification.FLAG_SHOW_LIGHTS;
-		
+
 		final int HELLO_ID = (int) Math.random()*10000000;
 		mNotificationManager.notify(HELLO_ID, notification);
 	}
