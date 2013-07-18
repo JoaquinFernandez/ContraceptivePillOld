@@ -59,6 +59,13 @@ public class CalendarView extends LinearLayout {
 				Toast.makeText(context, R.string.calendar_month_arrow_text, Toast.LENGTH_LONG).show();
 			}
 		});
+		prevMonth.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				Toast.makeText(context, R.string.calendar_month_arrow_text, Toast.LENGTH_LONG).show();
+			}
+		});
 		//Initialize parameters
 		this.context = context;
 		months = getResources().getStringArray(R.array.months);
