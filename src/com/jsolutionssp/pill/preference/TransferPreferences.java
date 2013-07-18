@@ -115,7 +115,8 @@ public class TransferPreferences {
 			String time = hour + ":" + minute;
 			newEditor.putString("diary_alarm_set_time", time);
 		}
-
+		//Add that the preferences have already been settled so no tour is needed
+		newEditor.putBoolean("first_time_used_preference", false);
 		newEditor.commit();
 		oldPrefs.edit().clear().commit();
 	}
