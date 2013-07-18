@@ -92,7 +92,7 @@
         start in the calendar \n Monday (European) \n Sunday (American)</string>
     <string name="preferences_instructions_fourth"> Now you can set the alarms for noticing you when to take the pill
             or buy the next pill pack</string>
-    <string name="contraceptive_pill_type_preferences"><item>Contraceptive pill type</item></string>
+    <string name="contraceptive_pill_type_preferences">Contraceptive pill type</string>
     <string name="week_start_day_preferences">Week start day</string>
     <string name="start_pack_date_preferences">Pack start date</string>
     <string name="diary_alarm_preferences">Diary alarm</string>
@@ -103,5 +103,6 @@
     <string name="vibration_preferences">Vibrate</string>
     <string name="ringtone_preferences">Ringtone</string>
     <string name="note_saved_text">Note Saved</string>
+    <string name="calendar_month_arrow_text">To change month, please swipe with your fingers</string>
 
 </resources>

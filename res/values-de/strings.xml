@@ -1,38 +1,91 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <resources>
-  <string name="app_name">Pille </string>
-      <string name="app_version">Version</string>
-    <string name="email">pill@jfma.es \n</string>
+
+    <string name="app_name">Antibabypille</string>
+    <string name="app_version">Version</string>
+    <string name="email">pill\@jfma.es</string>
     <string name="company_name">JFMA ™</string>
-    <string name="help_traducing"> Help us translate the application to your language. Write us!</string>
-  <string-array name="pill_types">
-    <item>21 Pillen</item>
-    <item>22 Pillen</item>
-    <item>24 Pillen</item>
-    <item>28 Pillen (21 + 7)</item>
-    <item>28 Pillen (24 + 4)</item>
+    <string name="help_traducing">Helfen Sie uns, die App in Ihre Sprache zu übersetzen. Schreiben Sie uns!</string>
+
+    <string-array name="pill_types">
+    <item>21 Pillen + 7 Ruhetage</item>
+    <item>22 Pillen + 6 Ruhetage</item>
+    <item>24 Pillen + 4 Ruhetage</item>
+    <item>21 aktive Pillen + 7 Placebos</item>
+    <item>24 aktive Pillen + 4 Placebos</item>
+    <item>28 Pillen + 7 Ruhetage</item>
   </string-array>
-  <string-array name="weekdays_short">
-    <item>Mon</item>
-    <item>Die</item>
-    <item>Mit</item>
-    <item>Don</item>
-    <item>Fre</item>
-    <item>Sam</item>
-    <item>Son</item>
+    <string-array name="weekdays_short">
+    <item>Mo.</item>
+    <item>Di.</item>
+    <item>Mi.</item>
+    <item>Do.</item>
+    <item>Fr.</item>
+    <item>Sa.</item>
+    <item>So.</item>
   </string-array>
-  <string-array name="months">
-    <item>Januar</item>
-    <item>Februar</item>
-    <item>M\ärz</item>
-    <item>April</item>
-    <item>Mai</item>
-    <item>Juni</item>
-    <item>Juli</item>
-    <item>August</item>
-    <item>September</item>
-    <item>Oktober</item>
-    <item>November</item>
-    <item>Dezember</item>
+    <string-array name="months">
+    <item>JANUAR</item>
+    <item>FEBRUAR</item>
+    <item>MÄRZ</item>
+    <item>APRIL</item>
+    <item>MAI</item>
+    <item>JUNI</item>
+    <item>JULI</item>
+    <item>AUGUST</item>
+    <item>SEPTEMBER</item>
+    <item>OKTOBER</item>
+    <item>NOVEMBER</item>
+    <item>DEZEMBER</item>
   </string-array>
+    <string-array name="start_week_day">
+    <item>Montag</item>
+    <item>Sonntag</item>
+  </string-array>
+        
+    <string-array name="pill_state_types">
+    <item>Genommene Pille</item>
+    <item>Verpasste Pille</item>
+    <item>Verspätet genommene Pille</item>
+    <item>Ausstehende Pille</item>
+    <item>Placebo</item>
+    <item>Ruhetag</item>
+  </string-array>
+    
+    <string name="calendar_tab_name">Kalender</string>
+    <string name="preferences_calendar_separator">Kalender</string>
+    <string name="preferences_alarms_separator">Alarme</string>
+    <string name="preferences_tab_name">Voreinstellungen</string>
+    <string name="button_ok">OK</string>
+    <string name="button_save">Speichern</string>
+    <string name="button_cancel">Abbrechen</string>
+    <string name="button_close">Schließen</string>
+    <string name="menu_about">Über</string>
+    <string name="menu_exit">Beenden</string>
+    <string name="menu_info">Info</string>
+    <string name="day_touched_note_title">Anmerkungen hinzufügen</string>
+    <string name="notification_bar_diary_text">Nehmen Sie Ihre Pille!</string>
+    <string name="notification_bar_cycle_text1">Ihr Pillenzyklus beginnt am</string>
+    <string name="notification_bar_cycle_text2">Tage!</string>
+    <string name="notification_bar_cycle_text3">Ihr Pillenzyklus beginnt heute!</string>
+    <string name="notification_bar_cycle_text4">Ihr Pillenzyklus beginnt morgen!</string>
+    <string name="button_calificate">Sagen Sie Ihre Meinung!</string>
+    <string name="calendar_info">Information</string>
+    <string name="calendar_instructions">Hier ist der Kalender.  Sie können durch die Monate blättern (verschieben Sie sie mit dem Finger) und wenn Sie auf einen der Tage klicken, können Sie für diesen Tag Notizen hinzufügen oder ändern, was mit der Pille dieses Tages geschehen ist (falls Sie die Einnahme vergessen haben, falls Sie sie zu spät genommen haben usw.). Sie sehen die Farblegende der Pille im Menü unter Informationen.</string>
+     <string name="preferences_instructions_first">Bitte wählen Sie die Art der von Ihnen verwendeten Pille, indem Sie auf die Art der Antibabypille klicken.</string>
+    <string name="preferences_instructions_second">Wählen Sie nun bitte den Tag, an dem Sie die erste Pille der letzten Schachtel genommen haben. Klicken Sie dazu auf den Zyklusanfang.</string>
+    <string name="preferences_instructions_third">Wählen Sie jetzt bitte den Tag, an dem die Woche im Kalender beginnen soll /n Montag (Europa) /n Sonntag (Amerika).</string>
+    <string name="preferences_instructions_fourth">Jetzt können Sie die Alarme wählen, wann Sie die Pille nehmen oder kaufen müssen.</string>
+    <string name="contraceptive_pill_type_preferences">Arten von Antibabypillen</string>
+    <string name="week_start_day_preferences">Erster Wochentag im Kalender</string>
+    <string name="start_pack_date_preferences">Zyklus-Anfang</string>
+    <string name="diary_alarm_preferences">Täglicher Alarm</string>
+    <string name="buy_alarm_preferences">Kaufalarm</string>
+    <string name="previous_days_preferences">Tage vor dem Anfang der Schachtel</string>
+    <string name="set_time_preferences">Zeit</string>
+    <string name="sound_preferences">Ton</string>
+    <string name="vibration_preferences">Vibration</string>
+    <string name="ringtone_preferences">Klang</string>
+    <string name="note_saved_text">Gespeicherte Anmerkung</string>
+
 </resources>

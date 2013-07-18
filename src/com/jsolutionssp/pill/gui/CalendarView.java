@@ -3,10 +3,12 @@ package com.jsolutionssp.pill.gui;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.jsolutionssp.pill.R;
 import com.jsolutionssp.pill.adapter.GridCalendarAdapter;
@@ -42,7 +44,7 @@ public class CalendarView extends LinearLayout {
 	 * @param context the context of the activity that created this layout
 	 * @param attrs attributes
 	 */
-	public CalendarView(Context context, int month, int year) {
+	public CalendarView(final Context context, int month, int year) {
 		super(context);
 		//Inflate the layout
 		LayoutInflater layoutInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -50,6 +52,13 @@ public class CalendarView extends LinearLayout {
 		//Retrieve month ImageViews
 		nextMonth = (ImageView) calendarLayout.findViewById(R.id.nextMonth);
 		prevMonth  = (ImageView) calendarLayout.findViewById(R.id.prevMonth);
+		nextMonth.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				Toast.makeText(context, R.string.calendar_month_arrow_text, Toast.LENGTH_LONG).show();
+			}
+		});
 		//Initialize parameters
 		this.context = context;
 		months = getResources().getStringArray(R.array.months);

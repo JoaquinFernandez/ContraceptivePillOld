@@ -1,5 +1,7 @@
 package com.jsolutionssp.pill.gui;
 
+import java.text.DateFormat;
+import java.text.DateFormatSymbols;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -252,6 +254,9 @@ public class CalendarCell extends RelativeLayout {
 			Display display = ((WindowManager) context.getSystemService(Activity.WINDOW_SERVICE)).getDefaultDisplay();
 			int width = display.getWidth();
 			dayTouchedDialog.getWindow().setLayout(width, android.view.WindowManager.LayoutParams.WRAP_CONTENT);
+			//The text view that shows the day of the month and day this dialog is owned by
+			TextView titleTextView = (TextView) dayTouchedDialog.findViewById(R.id.day_touched_title_text);
+			titleTextView.setText(getTitleText());
 			//Image view that is going to show the image of the pill type this cell has
 			ImageView imageView = (ImageView) dayTouchedDialog.findViewById(R.id.day_touched_pill_image);
 			imageView.setBackgroundResource(getDrawable());
@@ -330,6 +335,16 @@ public class CalendarCell extends RelativeLayout {
 			});
 
 			dayTouchedDialog.show();
+		}
+
+		private String getTitleText() {
+			GregorianCalendar calendar = new GregorianCalendar();
+			calendar.set(GregorianCalendar.YEAR, cellYear);
+			calendar.set(GregorianCalendar.DAY_OF_YEAR, cellDayOfYear);
+			String date = DateFormat.getDateInstance().format(calendar.getTimeInMillis());
+			DateFormatSymbols symbols = new DateFormatSymbols();
+			String weekDay = symbols.getWeekdays()[calendar.get(GregorianCalendar.DAY_OF_WEEK)];
+			return weekDay + " - " + date;
 		}
 	}
 }

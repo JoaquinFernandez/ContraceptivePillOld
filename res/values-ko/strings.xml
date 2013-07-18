@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <string name="app_name">경구피임약</string>
+    <string name="app_version">버전</string>
+    <string name="email">pill\@jfma.es</string>
+    <string name="company_name">JFMA ™</string>
+    <string name="help_traducing">사용자의 언어로 애플리케이션을 번역할 수 있도록 도와주세요. 메일을 보내주세요!</string>
+
+    <string-array name="pill_types">
+    <item>피임약 21알 + 7일 휴식</item>
+    <item>피임약 22알 + 6일 휴식</item>
+    <item>피임약 24알 + 4일 휴식</item>
+    <item>유효 피임약 21알 + 위약 7일</item>
+    <item>유효 피임약 24알 + 위약 4일</item>
+    <item>피임약 28알 + 7일 휴식</item>
+  </string-array>
+    <string-array name="weekdays_short">
+    <item>월</item>
+    <item>화</item>
+    <item>수</item>
+    <item>목</item>
+    <item>금</item>
+    <item>토</item>
+    <item>일</item>
+  </string-array>
+    <string-array name="months">
+    <item>1월</item>
+    <item>2월</item>
+    <item>3월</item>
+    <item>4월</item>
+    <item>5월</item>
+    <item>6월</item>
+    <item>7월</item>
+    <item>8월</item>
+    <item>9월</item>
+    <item>10월</item>
+    <item>11월</item>
+    <item>12월</item>
+  </string-array>
+    <string-array name="start_week_day">
+    <item>월요일</item>
+    <item>일요일</item>
+  </string-array>
+        
+    <string-array name="pill_state_types">
+    <item>복용한 피임약</item>
+    <item>누락한 피임약</item>
+    <item>복용이 지체된 피임약</item>
+    <item>보류중인 피임약</item>
+    <item>위약</item>
+    <item>휴일</item>
+  </string-array>
+    
+    <string name="calendar_tab_name">달력</string>
+    <string name="preferences_calendar_separator">달력</string>
+    <string name="preferences_alarms_separator">알림</string>
+    <string name="preferences_tab_name">설정</string>
+    <string name="button_ok">확인</string>
+    <string name="button_save">저장</string>
+    <string name="button_cancel">취소</string>
+    <string name="button_close">닫기</string>
+    <string name="menu_about">소개</string>
+    <string name="menu_exit">종료</string>
+    <string name="menu_info">정보</string>
+    <string name="day_touched_note_title">메모</string>
+    <string name="notification_bar_diary_text">피임약을 복용하세요!</string>
+    <string name="notification_bar_cycle_text1">피임약 주기 시작일</string>
+    <string name="notification_bar_cycle_text2">날짜</string>
+    <string name="notification_bar_cycle_text3">피임 주기를 오늘 시작해요!</string>
+    <string name="notification_bar_cycle_text4">피임 주기를 내일 시작해요!</string>
+    <string name="button_calificate">의견을 알려주세요!</string>
+    <string name="calendar_info">정보</string>
+    <string name="calendar_instructions">여기에 달력이 있습니다. 수개월을 탐색할 수 있고 (손가락으로 밀어서) 당일 날짜를 클릭하면 메모를 작성할 수 있으며, 당일 피임약의 복용이 어떠했는지 변경할 수 있습니다 (복용을 잊은 경우, 또는 너무 늦게 복용, 등) 메뉴에 있는 정보에 따라 피임약의 색상별 캡션을 볼 수 있습니다</string>
+     <string name="preferences_instructions_first">피임약의 종류를 클릭하여 복용하는 피임약의 종류를 선택하세요</string>
+    <string name="preferences_instructions_second">이제 주기의 시작을 클릭하여 이전 상자에 있는 첫 번째 피임약을 복용하기 시작한 날짜를 선택하세요</string>
+    <string name="preferences_instructions_third">이제 달력의 주 중에서 시작하려는 날짜를 선택하세요 /n 월요일 (유럽) /n 일요일 (미국)</string>
+    <string name="preferences_instructions_fourth">피임약을 복용해야하거나 구매해야 할 시기를 알려주는 알람을 이제 선택할 수 있습니다</string>
+    <string name="contraceptive_pill_type_preferences">경구 피임약 종류</string>
+    <string name="week_start_day_preferences">달력에서 첫 번째 요일</string>
+    <string name="start_pack_date_preferences">시작 주기</string>
+    <string name="diary_alarm_preferences">일일 알림</string>
+    <string name="buy_alarm_preferences">구매 알림</string>
+    <string name="previous_days_preferences">상자를 시작하기 전 날짜들</string>
+    <string name="set_time_preferences">시간</string>
+    <string name="sound_preferences">사운드</string>
+    <string name="vibration_preferences">진동</string>
+    <string name="ringtone_preferences">신호음</string>
+    <string name="note_saved_text">저장 메모</string>
+
+</resources>

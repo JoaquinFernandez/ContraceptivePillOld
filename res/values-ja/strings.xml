@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <string name="app_name">経口避妊薬</string>
+    <string name="app_version">バージョン</string>
+    <string name="email">pill\@jfma.es</string>
+    <string name="company_name">JFMA ™</string>
+    <string name="help_traducing">あなたの言語に翻訳して下さい。ご連絡下さい！</string>
+
+    <string-array name="pill_types">
+    <item>21錠 + 7日間オフ</item>
+    <item>22錠 + 6日間オフ</item>
+    <item>24錠 + 4日間オフ</item>
+    <item>活性薬21錠 + プラセボ7錠</item>
+    <item>活性薬24錠 + プラセボ4錠</item>
+    <item>28錠 + 7日間オフ</item>
+  </string-array>
+    <string-array name="weekdays_short">
+    <item>月</item>
+    <item>火</item>
+    <item>水</item>
+    <item>木</item>
+    <item>金</item>
+    <item>土</item>
+    <item>日</item>
+  </string-array>
+    <string-array name="months">
+    <item>1月</item>
+    <item>2月</item>
+    <item>3月</item>
+    <item>4月</item>
+    <item>5月</item>
+    <item>6月</item>
+    <item>7月</item>
+    <item>8月</item>
+    <item>9月</item>
+    <item>10月</item>
+    <item>11月ｓ</item>
+    <item>12月</item>
+  </string-array>
+    <string-array name="start_week_day">
+    <item>月曜日</item>
+    <item>日曜日</item>
+  </string-array>
+        
+    <string-array name="pill_state_types">
+    <item>飲んだ薬</item>
+    <item>飲み忘れた薬</item>
+    <item>遅れて飲んだ薬</item>
+    <item>飲む予定の薬</item>
+    <item>プラセボ</item>
+    <item>オフ</item>
+  </string-array>
+    
+    <string name="calendar_tab_name">カレンダー</string>
+    <string name="preferences_calendar_separator">カレンダー</string>
+    <string name="preferences_alarms_separator">アラームを購入する</string>
+    <string name="preferences_tab_name">好み</string>
+    <string name="button_ok">オーケー</string>
+    <string name="button_save">保存</string>
+    <string name="button_cancel">取消し</string>
+    <string name="button_close">終了</string>
+    <string name="menu_about">詳細</string>
+    <string name="menu_exit">終了</string>
+    <string name="menu_info">情報</string>
+    <string name="day_touched_note_title">メモを記入して下さい</string>
+    <string name="notification_bar_diary_text">薬を飲んで下さい</string>
+    <string name="notification_bar_cycle_text1">あなたの薬のサイクルは　　に始まります</string>
+    <string name="notification_bar_cycle_text2">日数！</string>
+    <string name="notification_bar_cycle_text3">あなたの薬のサイクルは今日始まります！</string>
+    <string name="notification_bar_cycle_text4">あなたの薬のサイクルは明日始まります！</string>
+    <string name="button_calificate">ご意見をお聞かせ下さい！</string>
+    <string name="calendar_info">情報</string>
+    <string name="calendar_instructions">これがカレンダーです。（指を滑らせて）月をブラウズすることが出来ます。ある日をクリックすると、その日に関するメモを記入したり、その日に飲む薬に関して何が起こったか（飲み忘れたまたは飲む時間が遅すぎた等）記入することが出来ます。メニューの情報の下にカラーで薬説明が書いてあります。</string>
+     <string name="preferences_instructions_first">経口避妊薬の種類をクリックして、あなたが使用する薬の種類を選択して下さい。</string>
+    <string name="preferences_instructions_second">サイクル開始日をクリックして、最後の箱の最初の薬を飲んだ日を選択して下さい。</string>
+    <string name="preferences_instructions_third">カレンダーで1週間が開始する日、/n 月曜日（欧州）/n 日曜日（アメリカ）を選択して下さい。</string>
+    <string name="preferences_instructions_fourth">薬を飲む時間または薬を購入すべき時を通知するアラームを選択して下さい。</string>
+    <string name="contraceptive_pill_type_preferences">経口避妊薬の種類</string>
+    <string name="week_start_day_preferences">カレンダーの最初の平日</string>
+    <string name="start_pack_date_preferences">サイクル開始日</string>
+    <string name="diary_alarm_preferences">毎日のアラーム</string>
+    <string name="buy_alarm_preferences">アラームを購入する</string>
+    <string name="previous_days_preferences">新しい箱を使用する前の日</string>
+    <string name="set_time_preferences">時間</string>
+    <string name="sound_preferences">音声</string>
+    <string name="vibration_preferences">振動</string>
+    <string name="ringtone_preferences">トーン</string>
+    <string name="note_saved_text">保存済みのメモ</string>
+
+</resources>

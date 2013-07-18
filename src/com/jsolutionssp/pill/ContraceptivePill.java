@@ -3,6 +3,7 @@ package com.jsolutionssp.pill;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -10,6 +11,7 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ListView;
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
@@ -18,11 +20,13 @@ import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 import com.google.analytics.tracking.android.EasyTracker;
 import com.jsolutionssp.pill.adapter.CalendarPagerAdapter;
+import com.jsolutionssp.pill.adapter.PillTypeShowBaseAdapter;
 import com.jsolutionssp.pill.calendar.CalendarFragment;
 import com.jsolutionssp.pill.calendar.CalendarTabListener;
 import com.jsolutionssp.pill.gui.AboutDialog;
 import com.jsolutionssp.pill.preference.PreferencesTabListenerV7;
 import com.jsolutionssp.pill.preference.TransferPreferences;
+import com.jsolutionssp.pill.service.SetAlarms;
 
 public class ContraceptivePill extends SherlockFragmentActivity {
 
@@ -39,9 +43,14 @@ public class ContraceptivePill extends SherlockFragmentActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		//Transfer old preferences if they have not been transfered yet, else run normally
+		//also call setAlarms to update the alarms to the new behavior 
 		SharedPreferences oldPrefs = getSharedPreferences("com.jsolutionssp.pill", 0);
-		if (oldPrefs.getInt("pillTakingDays", 0) != 0)
+		if (oldPrefs.getInt("pillTakingDays", 0) != 0) {
 			TransferPreferences.TransferOldPreferences(this);
+			Intent i = new Intent(this, SetAlarms.class);
+			i.setAction("com.jsolutionssp.pill.updateAlarm");
+			sendBroadcast(i);
+		}
 		//Get a reference of the action bar
 		ActionBar actionBar = getSupportActionBar();
 		actionBar.setDisplayShowTitleEnabled(false);
@@ -128,10 +137,13 @@ public class ContraceptivePill extends SherlockFragmentActivity {
 		case R.id.MnuOpt2:
 			//The dialog that is going to be shown when the user clicks on the change button
 			final Dialog changePillType = new Dialog(this, R.style.NoTitleDialog);
-			changePillType.setContentView(R.layout.select_pill_type_element);
-			Button button = (Button) changePillType.findViewById(R.id.select_pill_type_button);
-			button.setText(getResources().getString(R.string.button_close));
+			changePillType.setContentView(R.layout.select_pill_type);
+
+			ListView list = (ListView) changePillType.findViewById(R.id.select_pill_type_list);
+			list.setAdapter(new PillTypeShowBaseAdapter(this));
 			//Dismiss button
+			Button button = (Button) changePillType.findViewById(R.id.select_pill_type_button);
+			button.setText(R.string.button_ok);
 			button.setOnClickListener(new OnClickListener() {
 
 				@Override
